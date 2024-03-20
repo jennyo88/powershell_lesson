@@ -1,0 +1,52 @@
+|   Managing Files and Folders   |
+==================================
+- Working with files and folders:
+  - PowerShell provides cmdlets for managing files and folders, allowing you to perform common file system operations.
+  - Cmdlets like Get-ChildItem, Copy-Item, Move-Item, and Remove-Item are commonly used for file and folder manipulation.
+
+    Example:
+    - List all files and folders in the current directory:
+      ```powershell
+      Get-ChildItem
+      ```
+
+- Manipulating file content:
+  - PowerShell provides cmdlets for reading, writing, and appending to file content.
+  - Cmdlets like Get-Content, Set-Content, and Add-Content are used for file content manipulation.
+
+    Example:
+    - Read the content of a text file:
+      ```powershell
+      Get-Content -Path "C:\path\to\file.txt"
+      ```
+
+- Filesystem navigation:
+  - PowerShell allows you to navigate and manipulate the file system using familiar commands.
+  - Use cmdlets like Set-Location (cd), Get-Location (pwd), and Push-Location (pushd) to navigate directories.
+
+    Example:
+    - Change directory to a specific location:
+      ```powershell
+      Set-Location -Path "C:\path\to\directory"
+      ```
+
+- Advanced file operations:
+  - PowerShell supports advanced file operations such as creating directories, renaming files, and setting file attributes.
+  - Use cmdlets like New-Item, Rename-Item, and Set-ItemProperty for advanced file operations.
+
+    Example:
+    - Create a new directory:
+      ```powershell
+      New-Item -Path "C:\path\to\new_directory" -ItemType Directory
+      ```
+
+- Handling file permissions:
+  - PowerShell allows you to manage file and folder permissions using cmdlets like Get-Acl, Set-Acl, and Get-NTFSAccess.
+  - These cmdlets enable you to view, modify, and audit file permissions.
+
+    Example:
+    - Get the access control list (ACL) for a file or directory:
+      ```powershell
+      Get-Acl -Path "C:\path\to\file_or_directory"
+      ```
+
