@@ -1,49 +1,72 @@
-Working with Objects
+Working with Objects and Variables
 =================================================================================
 
----------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-PowerShell is based on the .NET Framework and treats everything as an object. Understanding how to work with objects in PowerShell is crucial for effective scripting and automation.
-This lesson will cover the basics of working with objects, including retrieving object properties and methods.
+In this lesson, we'll delve into the fundamentals of PowerShell regarding objects and variables. Understanding how PowerShell handles objects and variables is crucial for effective scripting and automation.
+Here's a breakdown of the topics covered:
 
----------------------------------------------------------------------------------
-Commands Covered:
----------------------------------------------------------------------------------
-1. Get-Member:
-   - Description: Displays the properties and methods of objects.
-   - Syntax: Get-Member [[-InputObject] <PSObject>] [-MemberType <MemberTypes[]>] [-Static] [-Force] [-View <String>] [<CommonParameters>]
-   - Example: Get-Process | Get-Member
-   - This command is used to explore the properties and methods of objects returned by other cmdlets. For example, running `Get-Process | Get-Member` will display all properties and methods of the process objects.
+1. Object Properties:
+   - Objects in PowerShell are structured data entities that contain properties and methods.
+   - Accessing object properties involves using dot notation, where you specify the object followed by a period and the property name.
+   - Manipulating object properties allows you to extract, modify, or interact with the data contained within objects.
 
-2. Select-Object:
-   - Description: Selects specified properties of objects.
-   - Syntax: Select-Object [-Property] <String[]> [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-First <Int32>] [-Skip <Int32>] [<CommonParameters>]
-   - Example: Get-Process | Select-Object Name, Id
-   - This command allows you to choose specific properties of objects to display. For instance, running `Get-Process | Select-Object Name, Id` will only display the Name and Id properties of process objects.
+    Example:
+    ```powershell
+    $obj = [PSCustomObject]@{
+        Name = "John"
+        Age = 30
+    }
 
-3. ForEach-Object:
-   - Description: Performs an operation on each item in a collection of objects.
-   - Syntax: ForEach-Object [-Process] <ScriptBlock> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [-InputObject <PSObject>] [<CommonParameters>]
-   - Example: Get-Service | ForEach-Object { Write-Host $_.Name }
-   - This command is used to execute a script block for each object in a collection. For example, running `Get-Service | ForEach-Object { Write-Host $_.Name }` will display the name of each service.
+    # Accessing object properties
+    $name = $obj.Name
+    $age = $obj.Age
+    ```
 
----------------------------------------------------------------------------------
+2. Variable Types:
+   - PowerShell supports various types of variables, including strings, integers, arrays, and hash tables.
+   - Variables can be implicitly or explicitly typed. Implicit typing means PowerShell determines the variable type based on the assigned value, while explicit typing involves specifying the variable type explicitly.
+   - Understanding variable types is essential for effectively storing and manipulating different kinds of data in your scripts.
+
+    Example:
+    ```powershell
+    # Implicit typing
+    $name = "John"
+    $age = 30
+
+    # Explicit typing
+    [int]$count = 5
+    [string[]]$names = @("John", "Jane", "Doe")
+    ```
+
+3. Variable Scope:
+   - Variable scope determines where in your script a variable is accessible and usable.
+   - PowerShell offers several variable scopes, including local, script, global, and environment scope.
+   - Local variables are confined to the current scope, script variables are accessible within the script file, global variables are accessible across the entire PowerShell session, and environment variables are system-wide variables accessible to all processes.
+
+    Example:
+    ```powershell
+    # Local variable
+    $localVariable = "Local"
+
+    # Script variable
+    $script:scriptVariable = "Script"
+
+    # Global variable
+    $global:globalVariable = "Global"
+
+    # Environment variable
+    [Environment]::SetEnvironmentVariable("EnvVariable", "Environment", "Machine")
+    ```
+
 Practice:
 ---------------------------------------------------------------------------------
-1. Retrieve information about a file:
-   - Use the Get-Item cmdlet to retrieve information about a specific file on your system.
-   - Pipe the output of Get-Item to Get-Member to explore the properties and methods available for file objects.
-   - Examine properties such as Name, Length, CreationTime, and LastWriteTime to understand how PowerShell represents file metadata.
+To reinforce learning, let's practice the following tasks:
 
-2. List all processes running on your system:
-   - Use the Get-Process cmdlet to retrieve a list of all processes currently running on your system.
-   - Pipe the output of Get-Process to Get-Member to explore the properties and methods available for process objects.
-   - Examine properties such as ID, Name, CPU, and Memory to gain insights into process-related information.
+1. Create an object and access its properties using dot notation. This will help solidify your understanding of working with object properties.
 
-3. Retrieve information about services:
-   - Use the Get-Service cmdlet to retrieve a list of all services installed on your system.
-   - Pipe the output of Get-Service to Get-Member to explore the properties and methods available for service objects.
-   - Examine properties such as DisplayName, Status, StartType, and CanPauseAndContinue to understand service-related information.
+2. Assign values to variables of different types (string, integer, array, hash table) and manipulate them. This exercise will familiarize you with the various variable types and how to interact with them.
 
-By practicing these tasks, you will become more familiar with working with objects in PowerShell and develop the skills necessary to manipulate and manage data effectively in your scripts and automation tasks.
+3. Experiment with variable scope by defining variables in different scopes and accessing them from various contexts. Understanding variable scope is crucial for writing robust and maintainable scripts.
+
+By completing these tasks, you will gain a solid understanding of working with objects and variables in PowerShell, empowering you to write more efficient and versatile scripts.
