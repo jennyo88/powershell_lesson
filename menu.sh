@@ -12,6 +12,18 @@ display_lesson_plan_summary() {
     fi
 }
 
+# Function to display the index of PowerShell commands
+display_powershell_index() {
+    if [ -f "powershell_index.txt" ]; then
+        clear
+        echo "PowerShell Commands Index:"
+        cat "powershell_index.txt"
+        echo
+    else
+        echo "PowerShell index not found."
+    fi
+}
+
 # Function to display lesson titles for a given week
 display_lesson_titles() {
     local week_directory="$1"
@@ -73,9 +85,10 @@ display_menu() {
     echo "                             Interactive Lesson Planner                         "
     echo "==============================================================================="
     echo "1. Display Lesson Plan Summary"
-    echo "2. Start Lesson Planner"
-    echo "3. Search for Keywords in Lessons"
-    echo "4. Exit"
+    echo "2. Display PowerShell Commands Index"
+    echo "3. Start Lesson Planner"
+    echo "4. Search for Keywords in Lessons"
+    echo "5. Exit"
     echo "==============================================================================="
 }
 
@@ -97,18 +110,22 @@ handle_menu_input() {
                 read -p "Press Enter to return to menu..."
                 ;;
             2)
-                main  # Call the main function to start the lesson planner
+                display_powershell_index
+                read -p "Press Enter to return to menu..."
                 ;;
             3)
+                main  # Call the main function to start the lesson planner
+                ;;
+            4)
                 read -p "Enter the keyword to search for: " keyword
                 search_keywords "$keyword"
                 ;;
-            4)
+            5)
                 echo "Exiting..."
                 exit 0
                 ;;
             *)
-                echo "Invalid choice. Please enter a number from 1 to 4."
+                echo "Invalid choice. Please enter a number from 1 to 5."
                 read -p "Press Enter to return to menu..."
                 ;;
         esac
