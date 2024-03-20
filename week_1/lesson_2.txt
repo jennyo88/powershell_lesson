@@ -1,25 +1,35 @@
-Working with Objects in PowerShell
+Working with Objects
 =================================================================================
 
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-In PowerShell, data is represented as objects rather than plain text, which allows for more versatile and powerful scripting capabilities. Objects encapsulate both data (properties) and actions (methods), enabling users to interact with them in a structured and meaningful way. Understanding how to work with objects is essential for effective PowerShell scripting and automation.
+PowerShell is based on the .NET Framework and treats everything as an object. Understanding how to work with objects in PowerShell is crucial for effective scripting and automation. This lesson will cover the basics of working with objects, including retrieving object properties and methods.
 
 ---------------------------------------------------------------------------------
 Commands Covered:
 ---------------------------------------------------------------------------------
 1. Get-Member:
-   - Description: The Get-Member cmdlet is used to retrieve the members (properties and methods) of an object. It allows users to explore the structure and capabilities of different types of objects.
-   - Syntax: Get-Member [-InputObject <PSObject>] [-MemberType <MemberTypes[]>] [-Static] [<CommonParameters>]
+   - Description: Displays the properties and methods of objects.
+   - Syntax: Get-Member [[-InputObject] <PSObject>] [-MemberType <MemberTypes[]>] [-Static] [-Force] [-View <String>] [<CommonParameters>]
    - Example: Get-Process | Get-Member
-   - Usage: By piping the output of a cmdlet or expression to Get-Member, users can examine the properties and methods available for the resulting objects. This helps in understanding the data returned by cmdlets and how to manipulate it effectively.
+   - This command is used to explore the properties and methods of objects returned by other cmdlets. For example, running `Get-Process | Get-Member` will display all properties and methods of the process objects.
+
+2. Select-Object:
+   - Description: Selects specified properties of objects.
+   - Syntax: Select-Object [-Property] <String[]> [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-First <Int32>] [-Skip <Int32>] [<CommonParameters>]
+   - Example: Get-Process | Select-Object Name, Id
+   - This command allows you to choose specific properties of objects to display. For instance, running `Get-Process | Select-Object Name, Id` will only display the Name and Id properties of process objects.
+
+3. ForEach-Object:
+   - Description: Performs an operation on each item in a collection of objects.
+   - Syntax: ForEach-Object [-Process] <ScriptBlock> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [-InputObject <PSObject>] [<CommonParameters>]
+   - Example: Get-Service | ForEach-Object { Write-Host $_.Name }
+   - This command is used to execute a script block for each object in a collection. For example, running `Get-Service | ForEach-Object { Write-Host $_.Name }` will display the name of each service.
 
 ---------------------------------------------------------------------------------
 Practice:
 ---------------------------------------------------------------------------------
-To reinforce understanding and gain practical experience with working with objects in PowerShell, here are some practice tasks for Lesson 2:
-
 1. Retrieve information about a file:
    - Use the Get-Item cmdlet to retrieve information about a specific file on your system.
    - Pipe the output of Get-Item to Get-Member to explore the properties and methods available for file objects.
