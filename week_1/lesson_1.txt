@@ -1,5 +1,5 @@
 |   Introduction to PowerShell   |
-============================================
+==================================
 - Overview of PowerShell:
   - PowerShell is a powerful command-line shell and scripting language developed by Microsoft.
   - It provides a command-line interface (CLI) for administrators to automate tasks and manage systems more efficiently.
