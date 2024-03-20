@@ -13,24 +13,18 @@ Script Structure:
 A PowerShell script typically consists of a series of commands and statements that are executed sequentially. Here's an example of a basic PowerShell script:
 Example:
    ```powershell
-      
       # This is a comment
       Write-Host "Hello, world!"
-   
    ```
-
 You can save this script in a .ps1 file (e.g., HelloWorld.ps1) and run it from the command line using the PowerShell interpreter:
-   ```powershell
-      
+   ```powershell   
       PS C:\Scripts> .\HelloWorld.ps1
       Hello, world!
-
    ```
-- Variables:
-Variables in PowerShell are used to store data that can be referenced and manipulated throughout a script. Here's how you can declare and use variables:
+1. Variables:
+   - Variables in PowerShell are used to store data that can be referenced and manipulated throughout a script. Here's how you can declare and use variables:
 Example:
    ```powershell
-      
       $name = "John"
       $age = 30
       $pi = 3.14
@@ -40,53 +34,46 @@ Example:
       Write-Host "Age: $age"
       Write-Host "PI: $pi"
       Write-Host "Is working: $isWorking"
-
    ```
-- Flow Control:
-PowerShell provides various constructs for controlling the flow of execution in a script, such as conditional statements and looping structures.
-Example (Conditional Statement - If/Else):
-   ```powershell
-
-      $number = 10
-
-      if ($number -gt 0) {
-          Write-Host "$number is positive"
-      } elseif ($number -lt 0) {
-          Write-Host "$number is negative"
-      } else {
-          Write-Host "$number is zero"
-      }
-
-   ```
-Example (Looping Structure - ForEach): 
-   ```powershell
-
-      $numbers = 1..5
-      
-      foreach ($num in $numbers) {
-          Write-Host "Number: $num"
-      }
-
-   ```
-- Functions:
-Functions in PowerShell allow you to encapsulate a block of code that can be reused multiple times within a script. Here's how you can define and use a function:
-Example:
-   ```powershell
-
-      function Get-Sum {
-          param (
-              [int]$num1,
-              [int]$num2
-          )
-      
-          $sum = $num1 + $num2
-          return $sum
-      }
-      
-      $result = Get-Sum -num1 5 -num2 3
-      Write-Host "Sum: $result"
-
-   ```
+2. Flow Control:
+   - PowerShell provides various constructs for controlling the flow of execution in a script, such as conditional statements and looping structures.
+   Example (Conditional Statement - If/Else):
+      ```powershell
+         $number = 10
+   
+         if ($number -gt 0) {
+             Write-Host "$number is positive"
+         } elseif ($number -lt 0) {
+             Write-Host "$number is negative"
+         } else {
+             Write-Host "$number is zero"
+         }
+      ```
+   Example (Looping Structure - ForEach): 
+      ```powershell
+         $numbers = 1..5
+         
+         foreach ($num in $numbers) {
+             Write-Host "Number: $num"
+         }
+      ```
+3. Functions:
+   - Functions in PowerShell allow you to encapsulate a block of code that can be reused multiple times within a script. Here's how you can define and use a function:
+   Example:
+      ```powershell
+         function Get-Sum {
+             param (
+                 [int]$num1,
+                 [int]$num2
+             )
+         
+             $sum = $num1 + $num2
+             return $sum
+         }
+         
+         $result = Get-Sum -num1 5 -num2 3
+         Write-Host "Sum: $result"
+      ```
 ---------------------------------------------------------------------------------
 Practice:
 ---------------------------------------------------------------------------------
