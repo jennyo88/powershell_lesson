@@ -1,87 +1,76 @@
-|   Scripting in PowerShell   |
-===============================
-- Writing scripts:
-  - PowerShell scripts are text files containing a series of PowerShell commands and statements.
-  - Scripts have a .ps1 file extension and can be executed from the command line or within the PowerShell environment.
-  - Scripts allow for automation of repetitive tasks and complex workflows.
+Remote Management with PowerShell Remoting
+=================================================================================
 
-    Example:
-    - Create a script file named `MyScript.ps1` with the following content:
-      ```powershell
-      Write-Host "Hello, World!"
-      ```
+Overview:
+---------------------------------------------------------------------------------
+PowerShell Remoting allows you to execute commands on remote computers, making it a powerful tool for managing systems across your network. This lesson will cover the basics of PowerShell Remoting, including enabling remoting, running commands remotely, and managing remote sessions.
 
-- Script parameters:
-  - Script parameters allow you to pass input values to scripts at runtime.
-  - Parameters are declared in the script header using the Param keyword.
-  - Parameters can have default values and support data validation.
+Enabling PowerShell Remoting:
+---------------------------------------------------------------------------------
+  This command configures the local computer to allow remote connections. It starts the WinRM service, sets it to start automatically, and creates a firewall rule to allow inbound remote connections.
 
-    Example:
-    - Create a script file named `GreetUser.ps1` with the following content:
-      ```powershell
-      Param(
-          [Parameter(Mandatory=$true)]
-          [string]$Name
-      )
+  For remote computers, you can enable remoting manually or use Group Policy settings.
 
-      Write-Host "Hello, $Name!"
-      ```
-    - Execute the script with a parameter: `.\GreetUser.ps1 -Name "John"`
+Running Commands Remotely:
+---------------------------------------------------------------------------------
+  Once remoting is enabled, you can use the Invoke-Command cmdlet to execute commands on remote computers.
 
-- Functions:
-  - Functions in PowerShell allow you to encapsulate reusable code blocks.
-  - Functions can accept parameters and return values.
-  - They enhance code readability, maintainability, and reusability.
+  Example:
+```
+    Invoke-Command -ComputerName "RemoteComputer" -ScriptBlock { Get-Process }
+```
 
-    Example:
-    - Define a function named `Get-Square` in a script file:
-      ```powershell
-      function Get-Square {
-          Param(
-              [int]$Number
-          )
-          return $Number * $Number
-      }
+  This command runs the Get-Process cmdlet on the "RemoteComputer" and returns information about running processes.
 
-      $result = Get-Square -Number 5
-      Write-Host "Square of 5 is $result"
-      ```
+  You can specify multiple remote computers by providing an array of computer names. Additionally, you can use the -Credential parameter to specify credentials for authenticating to remote computers.
 
-- Best practices:
-  - Use meaningful variable and function names to improve code readability.
-  - Comment your code to explain its purpose and functionality.
-  - Modularize your scripts by breaking them into smaller functions.
-  - Test your scripts thoroughly before deploying them to production environments.
-  - Follow coding standards and conventions for consistency.
+Managing Remote Sessions:
+---------------------------------------------------------------------------------
+  PowerShell allows you to establish persistent remote sessions with remote computers, which can be useful for running multiple commands without reconnecting each time.
 
-    Example:
-    - Comment your script to explain its purpose and usage:
-      ```powershell
-      <#
-      .SYNOPSIS
-      This script greets the user with a customizable message.
+  Example (Establishing a Remote Session):
+```
+    $session = New-PSSession -ComputerName "RemoteComputer"
+```
 
-      .DESCRIPTION
-      This script accepts a name as input and greets the user with a personalized message.
+  This command establishes a persistent remote session with the "RemoteComputer".
 
-      .PARAMETER Name
-      Specifies the name of the user to greet.
+  You can then run commands within the session using the Invoke-Command cmdlet with the -Session parameter.
 
-      .EXAMPLE
-      .\GreetUser.ps1 -Name "John"
-      Greets the user with the name "John".
+  Example (Running Commands within a Remote Session):
+```
+    Invoke-Command -Session $session -ScriptBlock { Get-Service }
+```
 
-      .NOTES
-      Author: Your Name
-      Date: YYYY-MM-DD
-      Version: 1.0
-      #>
+  To disconnect from a remote session without closing it, you can use the Disconnect-PSSession cmdlet. Later, you can reconnect to the session using the Connect-PSSession cmdlet.
 
-      Param(
-          [Parameter(Mandatory=$true)]
-          [string]$Name
-      )
+  Example (Disconnecting and Reconnecting to a Remote Session):
+```
+    Disconnect-PSSession -Session $session
+    Connect-PSSession -Session $session
+```
 
-      Write-Host "Hello, $Name!"
-      ```
+  To close a remote session entirely, use the Remove-PSSession cmdlet.
 
+  Example (Closing a Remote Session):
+```
+    Remove-PSSession -Session $session
+```
+
+Practice:
+---------------------------------------------------------------------------------
+To gain proficiency in PowerShell Remoting, practice the following tasks:
+
+1. Enable PowerShell Remoting on your local computer using the Enable-PSRemoting cmdlet.
+
+2. Run a basic command (e.g., Get-Process) on a remote computer in your network using the Invoke-Command cmdlet.
+
+3. Execute a script remotely on a remote computer. The script should perform a simple task, such as retrieving system information or checking service status.
+
+4. Establish a persistent remote session with a remote computer using the New-PSSession cmdlet and run multiple commands within the session.
+
+5. Disconnect from the remote session without closing it using the Disconnect-PSSession cmdlet, and then reconnect to it later using the Connect-PSSession cmdlet.
+
+6. Close the remote session entirely using the Remove-PSSession cmdlet.
+
+By completing these tasks, you will gain practical experience in using PowerShell Remoting to manage remote computers and automate administration tasks across your network.
