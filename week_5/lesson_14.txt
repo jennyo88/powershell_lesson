@@ -1,90 +1,196 @@
+INDEX
 
+A
+---------------------------------------------------------------------------------
+Add-Content:
+- Description: Appends content to the specified items.
+- Syntax: Add-Content [-Path] <String[]> [[-Value] <Object>] [-Encoding <Encoding>] [-PassThru] [-NoNewline] [-Stream <String>] [<CommonParameters>]
+- Example: Add-Content -Path "C:\file.txt" -Value "New content"
 
-Get-Help:
-- Description: Retrieves information about PowerShell cmdlets, functions, providers, aliases, and scripts.
-- Syntax: Get-Help [-Name] <String[]> [-Parameter <String>] [-Component <String[]>] [-Functionality <String[]>] [-Role <String>] [-Category <String[]>] [-Full] [-Online] [<CommonParameters>]
-- Example: Get-Help Get-Process
+B
+---------------------------------------------------------------------------------
 
-Get-Command:
-- Description: Retrieves all available commands in PowerShell.
-- Syntax: Get-Command [-Name <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-ShowCommandInfo] [-FullyQualifiedModule <ModuleSpecification[]>] [-ListImported] [<CommonParameters>]
-- Example: Get-Command
+C
+---------------------------------------------------------------------------------
+Copy-Item:
+- Description: Copies an item from one location to another.
+- Syntax: Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Credential <PSCredential>] [-Force] [-Include <String[]>] [-Exclude <String[]>] [-Filter <String>] [-Recurse] [-PassThru] [-UseTransaction] [-ToSession <PSSession>] [<CommonParameters>]
+- Example: Copy-Item -Path "C:\file.txt" -Destination "D:\backup"
 
-Get-Service:
-- Description: Retrieves the status of services on a computer.
-- Syntax: Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-DisplayName <String[]>] [-InputObject <ServiceController[]>] [-StartupType <String[]>] [<CommonParameters>]
-- Example: Get-Service
+E
+---------------------------------------------------------------------------------
+Enable-PSRemoting:
+- Description: Configures the computer to receive remote commands.
+- Syntax: Enable-PSRemoting [-Force] [-SkipNetworkProfileCheck] [-WhatIf] [-Confirm] [<CommonParameters>]
+- Example: Enable-PSRemoting
 
-Get-Process:
-- Description: Retrieves information about processes running on a local or remote computer.
-- Syntax: Get-Process [[-Name] <String[]>] [-ComputerName <String[]>] [-FileVersionInfo] [-Module] [-IncludeUserName] [<CommonParameters>]
-- Example: Get-Process
+Enter-PSSession:
+- Description: Starts an interactive session with a remote computer.
+- Syntax: Enter-PSSession [-ComputerName] <String> [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL] [-SessionOption <PSSessionOption>] [-ApplicationName <String>] [-ConfigurationName <String>] [-EnableNetworkAccess] [-AllowRedirection] [-ThrottleLimit <Int32>] [-IdleTimeoutSec <Int32>] [-OutputBufferingMode <OutputBufferingMode>] [<CommonParameters>]
+- Example: Enter-PSSession -ComputerName "RemoteComputer"
 
-Get-ChildItem:
-- Description: Retrieves the child items (files and folders) in a specified location.
-- Syntax: Get-ChildItem [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse] [-Depth <UInt32>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
-- Example: Get-ChildItem C:\
+Export-Csv:
+- Description: Converts objects into a series of CSV variable-length strings and saves them in a CSV file.
+- Syntax: Export-Csv [-Path] <String> [[-Delimiter] <Char>] [-Encoding <Encoding>] [-NoTypeInformation] [-Append] [-Force] [-InputObject <PSObject>] [<CommonParameters>]
+- Example: Get-Process | Export-Csv -Path "C:\processes.csv"
 
-Select-Object:
-- Description: Selects specific properties from objects and displays them.
-- Syntax: Select-Object [-Property] <Object[]> [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-First <Int32>] [-Last <Int32>] [-Skip <Int32>] [-Unique] [<CommonParameters>]
-- Example: Get-Process | Select-Object Name, CPU
-
-Where-Object:
-- Description: Selects objects from a collection based on a condition.
-- Syntax: Where-Object [[-Property] <Object>] [-eq <Object>] [-ne <Object>] [-gt <Object>] [-ge <Object>] [-lt <Object>] [-le <Object>] [-like <Object>] [-notlike <Object>] [-match <Object>] [-notmatch <Object>] [-contains <Object>] [-notcontains <Object>] [-in <Object[]>] [-notin <Object[]>] [-replace <Object>] [-contains] [-notcontains] [-in] [-notin] [-is <Object>] [-isnot <Object>] [-and] [-or] [-band] [-bor] [-not] [<CommonParameters>]
-- Example: Get-Process | Where-Object {$_.CPU -gt 50}
-
-ForEach-Object:
-- Description: Performs an operation on each item in a collection of input objects.
-- Syntax: ForEach-Object [-Process] <ScriptBlock[]> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [-InputObject <psobject>] [-Parallel] [-ThrottleLimit <Int32>] [-NoNewline] [-WhatIf] [-Confirm] [<CommonParameters>]
-- Example: Get-Process | ForEach-Object { Stop-Process $_ }
-
-Sort-Object:
-- Description: Sorts objects by property values.
-- Syntax: Sort-Object [[-Property] <Object[]>] [-Descending] [-CaseSensitive] [-CultureInfo <CultureInfo>] [-Unique] [<CommonParameters>]
-- Example: Get-Process | Sort-Object CPU -Descending
-
-If:
-- Description: Conditionally executes a statement based on the value of a condition.
-- Syntax: if (<condition>) { <statement> } [elseif (<condition>) { <statement> }] [else { <statement> }]
-- Example: if ($var -eq "value") { Write-Output "Variable is equal to 'value'" }
-
-ForEach:
+F
+---------------------------------------------------------------------------------
+For-Each:
 - Description: Iterates through items in a collection.
-- Syntax: foreach (<variable> in <collection>) { <statement> }
-- Example: foreach ($item in $collection) { Write-Output $item }
-
-While:
-- Description: Executes a statement or group of statements as long as a specified condition is true.
-- Syntax: while (<condition>) { <statement> }
-- Example: while ($count -lt 10) { Write-Output $count; $count++ }
+- Syntax: ForEach (<variable> in <collection>) { <statement> }
+- Example: ForEach ($item in $collection) { Write-Output $item }
 
 Function:
 - Description: Defines a new function.
 - Syntax: function <name> { <scriptblock> }
 - Example: function SayHello { Write-Output "Hello, World!" }
 
-New-Module:
-- Description: Creates a new dynamic module.
-- Syntax: New-Module [[-Name] <String>] [-ScriptBlock <ScriptBlock>] [-Function <Hashtable>] [-Cmdlet <Hashtable>] [-Variable <Hashtable>] [-Alias <Hashtable>] [-AsCustomObject] [<CommonParameters>]
-- Example: New-Module -ScriptBlock { function Test { Write-Output "This is a test function." } }
+G
+---------------------------------------------------------------------------------
+Get-ChildItem:
+- Description: Retrieves the child items (files and folders) in a specified location.
+- Syntax: Get-ChildItem [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse] [-Depth <UInt32>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+- Example: Get-ChildItem C:\
+
+Get-Command:
+- Description: Retrieves all available commands in PowerShell.
+- Syntax: Get-Command [-Name <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-ShowCommandInfo] [-FullyQualifiedModule <ModuleSpecification[]>] [-ListImported] [<CommonParameters>]
+- Example: Get-Command
+
+Get-Help:
+- Description: Retrieves information about PowerShell cmdlets, functions, providers, aliases, and scripts.
+- Syntax: Get-Help [-Name] <String[]> [-Parameter <String>] [-Component <String[]>] [-Functionality <String[]>] [-Role <String>] [-Category <String[]>] [-Full] [-Online] [<CommonParameters>]
+- Example: Get-Help Get-Process
+
+Get-Item:
+- Description: Retrieves the item at the specified location.
+- Syntax: Get-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+- Example: Get-Item -Path "C:\file.txt"
+
+Get-Process:
+- Description: Retrieves information about processes running on a local or remote computer.
+- Syntax: Get-Process [[-Name] <String[]>] [-ComputerName <String[]>] [-FileVersionInfo] [-Module] [-IncludeUserName] [<CommonParameters>]
+- Example: Get-Process
+
+Get-Service:
+- Description: Retrieves the status of services on a computer.
+- Syntax: Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-DisplayName <String[]>] [-InputObject <ServiceController[]>] [-StartupType <String[]>] [<CommonParameters>]
+- Example: Get-Service
+
+Get-WmiObject:
+- Description: Retrieves instances of Windows Management Instrumentation (WMI) classes or information about the available classes.
+- Syntax: Get-WmiObject [[-Class] <String>] [-Namespace <String>] [-List] [-Query <String>] [-Authentication <AuthenticationLevel>] [-Impersonation <ImpersonationLevel>] [-ComputerName <String[]>] [-Credential <PSCredential>] [-Filter <String>] [-Locale <String>] [-Property <String[]>] [-Authority <String>] [-EnableAllPrivileges] [<CommonParameters>]
+- Example: Get-WmiObject -Class Win32_OperatingSystem
+
+I
+---------------------------------------------------------------------------------
+If:
+- Description: Conditionally executes a statement based on the value of a condition.
+- Syntax: if (<condition>) { <statement> } [elseif (<condition>) { <statement> }] [else { <statement> }]
+- Example: if ($var -eq "value") { Write-Output "Variable is equal to 'value'" }
 
 Import-Module:
 - Description: Imports a module into the current session.
 - Syntax: Import-Module [-Name] <String[]> [-Function <Hashtable>] [-Cmdlet <Hashtable>] [-Variable <Hashtable>] [-Alias <Hashtable>] [-ArgumentList <Object[]>] [-PassThru] [-Global] [-NoClobber] [-Force] [-Prefix <String>] [-DisableNameChecking] [-AsCustomObject] [<CommonParameters>]
 - Example: Import-Module MyModule
 
-Try:
-- Description: Implements error handling for a block of script code.
-- Syntax: try { <statements> } catch { <statements> } finally { <statements> }
-- Example: try { Get-Process } catch { Write-Error "An error occurred." }
+Invoke-Command:
+- Description: Runs commands on local and remote computers.
+- Syntax: Invoke-Command [-ComputerName] <String[]> [-ScriptBlock] <ScriptBlock> [-Credential <PSCredential>] [-Authentication <AuthenticationMechanism>] [-CertificateThumbprint <String>] [-Port <Int32>] [-UseSSL] [-ConfigurationName <String>] [-SessionOption <PSSessionOption>] [-ThrottleLimit <Int32>] [-AsJob] [-HideComputerName] [-EnableNetworkAccess] [-InputObject <PSObject>] [<CommonParameters>]
+- Example: Invoke-Command -ComputerName "Server01" -ScriptBlock { Get-Process }
 
-Catch:
-- Description: Defines a block of script code to handle errors generated by a preceding try block.
-- Syntax: catch { <statements> }
-- Example: catch { Write-Error "An error occurred." }
+J
+---------------------------------------------------------------------------------
 
-Finally:
-- Description: Defines a block of script code that runs regardless of whether an error occurred in a preceding try block.
-- Syntax: finally
+K
+---------------------------------------------------------------------------------
+
+L
+---------------------------------------------------------------------------------
+
+M
+---------------------------------------------------------------------------------
+Measure-Command:
+- Description: Measures the time it takes to run script blocks or cmdlets.
+- Syntax: Measure-Command [-Expression] <ScriptBlock> [<CommonParameters>]
+- Example: Measure-Command { Get-Process }
+
+N
+---------------------------------------------------------------------------------
+New-Module:
+- Description: Creates a new dynamic module.
+- Syntax: New-Module [[-Name] <String>] [-ScriptBlock <ScriptBlock>] [-Function <Hashtable>] [-Cmdlet <Hashtable>] [-Variable <Hashtable>] [-Alias <Hashtable>] [-AsCustomObject] [<CommonParameters>]
+- Example: New-Module -ScriptBlock { function Test { Write-Output "This is a test function." } }
+
+O
+---------------------------------------------------------------------------------
+
+P
+---------------------------------------------------------------------------------
+
+Q
+---------------------------------------------------------------------------------
+
+R
+---------------------------------------------------------------------------------
+Remove-Item:
+- Description: Deletes the specified items.
+- Syntax: Remove-Item [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse] [-Force] [-Confirm] [-WhatIf] [<CommonParameters>]
+- Example: Remove-Item -Path "C:\file.txt"
+
+S
+---------------------------------------------------------------------------------
+Set-Variable:
+- Description: Sets the value of a variable.
+- Syntax: Set-Variable [-Name] <String> [-Value] <Object> [-Option <ScopedItemOptions>] [-PassThru] [-Scope <String>] [-Description <String>] [-Force] [<CommonParameters>]
+- Example: Set-Variable -Name "var" -Value "value"
+
+Sort-Object:
+- Description: Sorts objects by property values.
+- Syntax: Sort-Object [[-Property] <Object[]>] [-Descending] [-CaseSensitive] [-CultureInfo <CultureInfo>] [-Unique] [<CommonParameters>]
+- Example: Get-Process | Sort-Object CPU -Descending
+
+Start-Transcript:
+- Description: Starts a transcript of a command session.
+- Syntax: Start-Transcript [[-Path] <String>] [-Force] [-NoClobber] [-Append] [<CommonParameters>]
+- Example: Start-Transcript -Path "C:\transcript.txt"
+
+T
+---------------------------------------------------------------------------------
+Test-Path:
+- Description: Determines whether all elements of a path exist.
+- Syntax: Test-Path [-Path] <String[]> [-IsValid] [-Include <String[]>] [-Exclude <String[]>] [-PathType <PathType>] [<CommonParameters>]
+- Example: Test-Path -Path "C:\file.txt"
+
+U
+---------------------------------------------------------------------------------
+
+V
+---------------------------------------------------------------------------------
+
+W
+---------------------------------------------------------------------------------
+Write-Error:
+- Description: Writes an error message to the error stream.
+- Syntax: Write-Error [-Message] <String> [-Category <ErrorCategory>] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-WarningAction <ActionPreference>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>] [<CommonParameters>]
+- Example: Write-Error -Message "An error occurred."
+
+Write-Output:
+- Description: Sends the specified objects to the next command in the pipeline.
+- Syntax: Write-Output [-InputObject] <psobject> [-NoEnumerate] [<CommonParameters>]
+- Example: Write-Output "Hello, World!"
+
+Write-Verbose:
+- Description: Writes text to the verbose message stream.
+- Syntax: Write-Verbose [-Message] <String> [-Prefix <String>] [<CommonParameters>]
+- Example: Write-Verbose -Message "Verbose message"
+
+X
+---------------------------------------------------------------------------------
+
+Y
+---------------------------------------------------------------------------------
+
+Z
+---------------------------------------------------------------------------------
