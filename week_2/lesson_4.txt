@@ -63,10 +63,12 @@ Example (Conditional Statement - If/Else):
       } else {
           Write-Host "$number is zero"
       }
-      Example (Looping Structure - ForEach):
+
+   ```
+Example (Looping Structure - ForEach):
       
-      powershell
-      Copy code
+   ```powershell
+
       $numbers = 1..5
       
       foreach ($num in $numbers) {
@@ -80,41 +82,43 @@ Functions in PowerShell allow you to encapsulate a block of code that can be reu
 
 Example:
 
-powershell
-Copy code
-function Get-Sum {
-    param (
-        [int]$num1,
-        [int]$num2
-    )
+   ```powershell
 
-    $sum = $num1 + $num2
-    return $sum
-}
+      function Get-Sum {
+          param (
+              [int]$num1,
+              [int]$num2
+          )
+      
+          $sum = $num1 + $num2
+          return $sum
+      }
+      
+      $result = Get-Sum -num1 5 -num2 3
+      Write-Host "Sum: $result"
 
-$result = Get-Sum -num1 5 -num2 3
-Write-Host "Sum: $result"
+   ```
+---------------------------------------------------------------------------------
 Practice:
+---------------------------------------------------------------------------------
 To solidify your understanding of PowerShell scripting basics, practice the following tasks:
 
-Write a PowerShell script that prompts the user to enter their name, then displays a personalized greeting message.
+1. Write a PowerShell script that prompts the user to enter their name, then displays a personalized greeting message.
 
-Create a script that takes two numbers as input from the user and calculates their sum, difference, product, and quotient. Display the results.
+2. Create a script that takes two numbers as input from the user and calculates their sum, difference, product, and quotient. Display the results.
 
-Write a script that iterates through a list of numbers (e.g., 1 to 10) and prints whether each number is even or odd.
+3. Write a script that iterates through a list of numbers (e.g., 1 to 10) and prints whether each number is even or odd.
 
-Develop a script that checks if a given directory exists. If it does, display a message indicating its existence; otherwise, create the directory and inform the user.
+4. Develop a script that checks if a given directory exists. If it does, display a message indicating its existence; otherwise, create the directory and inform the user.
 
-Define a function in a script that takes two parameters (e.g., $num1 and $num2) and returns the larger of the two numbers.
+5. Define a function in a script that takes two parameters (e.g., $num1 and $num2) and returns the larger of the two numbers.
 
-Create a script that reads a text file and counts the number of lines it contains. Display the total line count.
+6. Create a script that reads a text file and counts the number of lines it contains. Display the total line count.
 
 By completing these tasks, you will gain practical experience in PowerShell scripting fundamentals, preparing you to tackle more complex automation tasks in your IT environment.
 
-vbnet
-Copy code
-
-This lesson covers the basics of PowerShell scripting, including script structure, variables, flow control, and functions, with examples provided for each topic. The practice section offers exercises to reinforce these concepts and build practical scripting skills.
+This lesson covers the basics of PowerShell scripting, including script structure, variables, flow control, and functions, with examples provided for each topic.
+The practice section offers exercises to reinforce these concepts and build practical scripting skills.
 
 
 
