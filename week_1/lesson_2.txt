@@ -1,25 +1,38 @@
 |   PowerShell Basics   |
 =========================
-- Cmdlets: Understanding and using cmdlets.
-  - Cmdlets (pronounced "command-lets") are lightweight commands in PowerShell that perform specific tasks.
-  - Example: `Get-Process` retrieves a list of running processes on the system.
-  
-- Basic syntax: Verb-Noun structure, parameters, and arguments.
-  - PowerShell cmdlets follow a Verb-Noun naming convention.
-  - Parameters are used to modify cmdlet behavior, and arguments are values passed to parameters.
-  - Example: `Get-ChildItem -Path C:\Windows` lists files and directories in the specified path.
+- Cmdlets:
+  - Cmdlets (pronounced "command-lets") are lightweight commands used in PowerShell.
+  - They follow a Verb-Noun naming convention and perform specific tasks.
+  - Cmdlets are the building blocks of PowerShell scripts and commands.
 
-- Common cmdlets: Get-Help, Get-Command, Get-Process, Get-Service.
-  - `Get-Help`: Retrieves help information about cmdlets, functions, and scripts.
-    Example: `Get-Help Get-Process`
-  - `Get-Command`: Lists all available cmdlets.
-    Example: `Get-Command -Module ActiveDirectory`
-  - `Get-Process`: Retrieves information about running processes.
-    Example: `Get-Process -Name chrome`
-  - `Get-Service`: Retrieves information about installed services.
-    Example: `Get-Service -Name Spooler`
-  
-- Using the pipeline: Piping output from one cmdlet to another.
-  - The pipeline (`|`) allows the output of one cmdlet to be passed as input to another.
-  - Example: `Get-Process | Where-Object {$_.Handles -gt 1000}` filters processes with more than 1000 handles.
+    Example:
+    - `Get-Process` retrieves information about running processes on the system.
+    - `Get-Service` retrieves information about installed services on the system.
 
+- Basic syntax:
+  - PowerShell cmdlets follow a consistent syntax: `Verb-Noun`.
+  - Parameters are used to modify cmdlet behavior and are preceded by a hyphen.
+  - Arguments provide input to cmdlets and parameters.
+
+    Example:
+    - `Get-Process -Name "chrome"` retrieves information about the Chrome process.
+    - `Get-Service -DisplayName "Print Spooler"` retrieves information about the Print Spooler service.
+
+- Common cmdlets:
+  - Get-Help: Retrieves help information about PowerShell cmdlets and concepts.
+  - Get-Command: Lists all available cmdlets on the system.
+  - Get-Process: Retrieves information about running processes.
+  - Get-Service: Retrieves information about installed services.
+
+    Example:
+    - `Get-Help Get-Process` retrieves help information about the Get-Process cmdlet.
+    - `Get-Command` lists all available cmdlets on the system.
+  
+- Using the pipeline:
+  - The pipeline (`|`) allows the output of one cmdlet to be passed as input to another cmdlet.
+  - It enables chaining multiple cmdlets together to perform complex tasks efficiently.
+
+    Example:
+    - `Get-Process | Where-Object { $_.CPU -gt 50 }` retrieves processes with CPU usage greater than 50%.
+
+These examples demonstrate the fundamental concepts of PowerShell, including cmdlets, basic syntax, common cmdlets, and the use of the pipeline. Understanding these basics is crucial for working effectively with PowerShell.
