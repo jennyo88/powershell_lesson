@@ -11,19 +11,22 @@ This lesson will cover the basics of PowerShell scripting, including script stru
 Script Structure:
 ---------------------------------------------------------------------------------
 A PowerShell script typically consists of a series of commands and statements that are executed sequentially. Here's an example of a basic PowerShell script:
-Example:
+
+   Example:
    ```powershell
       # This is a comment
       Write-Host "Hello, world!"
    ```
 You can save this script in a .ps1 file (e.g., HelloWorld.ps1) and run it from the command line using the PowerShell interpreter:
+
    ```powershell   
       PS C:\Scripts> .\HelloWorld.ps1
       Hello, world!
    ```
 1. Variables:
    - Variables in PowerShell are used to store data that can be referenced and manipulated throughout a script. Here's how you can declare and use variables:
-Example:
+   
+   Example:
    ```powershell
       $name = "John"
       $age = 30
@@ -37,7 +40,8 @@ Example:
    ```
 2. Flow Control:
    - PowerShell provides various constructs for controlling the flow of execution in a script, such as conditional statements and looping structures.
-   Example (Conditional Statement - If/Else):
+
+      Example (Conditional Statement - If/Else):
       ```powershell
          $number = 10
    
@@ -49,7 +53,8 @@ Example:
              Write-Host "$number is zero"
          }
       ```
-   Example (Looping Structure - ForEach): 
+
+      Example (Looping Structure - ForEach): 
       ```powershell
          $numbers = 1..5
          
@@ -59,7 +64,8 @@ Example:
       ```
 3. Functions:
    - Functions in PowerShell allow you to encapsulate a block of code that can be reused multiple times within a script. Here's how you can define and use a function:
-   Example:
+   
+      Example:
       ```powershell
          function Get-Sum {
              param (
