@@ -1,0 +1,90 @@
+
+
+Get-Help:
+- Description: Retrieves information about PowerShell cmdlets, functions, providers, aliases, and scripts.
+- Syntax: Get-Help [-Name] <String[]> [-Parameter <String>] [-Component <String[]>] [-Functionality <String[]>] [-Role <String>] [-Category <String[]>] [-Full] [-Online] [<CommonParameters>]
+- Example: Get-Help Get-Process
+
+Get-Command:
+- Description: Retrieves all available commands in PowerShell.
+- Syntax: Get-Command [-Name <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-ShowCommandInfo] [-FullyQualifiedModule <ModuleSpecification[]>] [-ListImported] [<CommonParameters>]
+- Example: Get-Command
+
+Get-Service:
+- Description: Retrieves the status of services on a computer.
+- Syntax: Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-DisplayName <String[]>] [-InputObject <ServiceController[]>] [-StartupType <String[]>] [<CommonParameters>]
+- Example: Get-Service
+
+Get-Process:
+- Description: Retrieves information about processes running on a local or remote computer.
+- Syntax: Get-Process [[-Name] <String[]>] [-ComputerName <String[]>] [-FileVersionInfo] [-Module] [-IncludeUserName] [<CommonParameters>]
+- Example: Get-Process
+
+Get-ChildItem:
+- Description: Retrieves the child items (files and folders) in a specified location.
+- Syntax: Get-ChildItem [-Path] <String[]> [-Filter <String>] [-Include <String[]>] [-Exclude <String[]>] [-Recurse] [-Depth <UInt32>] [-Force] [-Name] [-Attributes <FlagsExpression[FileAttributes]>] [-Directory] [-File] [-Hidden] [-ReadOnly] [-System] [<CommonParameters>]
+- Example: Get-ChildItem C:\
+
+Select-Object:
+- Description: Selects specific properties from objects and displays them.
+- Syntax: Select-Object [-Property] <Object[]> [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-First <Int32>] [-Last <Int32>] [-Skip <Int32>] [-Unique] [<CommonParameters>]
+- Example: Get-Process | Select-Object Name, CPU
+
+Where-Object:
+- Description: Selects objects from a collection based on a condition.
+- Syntax: Where-Object [[-Property] <Object>] [-eq <Object>] [-ne <Object>] [-gt <Object>] [-ge <Object>] [-lt <Object>] [-le <Object>] [-like <Object>] [-notlike <Object>] [-match <Object>] [-notmatch <Object>] [-contains <Object>] [-notcontains <Object>] [-in <Object[]>] [-notin <Object[]>] [-replace <Object>] [-contains] [-notcontains] [-in] [-notin] [-is <Object>] [-isnot <Object>] [-and] [-or] [-band] [-bor] [-not] [<CommonParameters>]
+- Example: Get-Process | Where-Object {$_.CPU -gt 50}
+
+ForEach-Object:
+- Description: Performs an operation on each item in a collection of input objects.
+- Syntax: ForEach-Object [-Process] <ScriptBlock[]> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [-InputObject <psobject>] [-Parallel] [-ThrottleLimit <Int32>] [-NoNewline] [-WhatIf] [-Confirm] [<CommonParameters>]
+- Example: Get-Process | ForEach-Object { Stop-Process $_ }
+
+Sort-Object:
+- Description: Sorts objects by property values.
+- Syntax: Sort-Object [[-Property] <Object[]>] [-Descending] [-CaseSensitive] [-CultureInfo <CultureInfo>] [-Unique] [<CommonParameters>]
+- Example: Get-Process | Sort-Object CPU -Descending
+
+If:
+- Description: Conditionally executes a statement based on the value of a condition.
+- Syntax: if (<condition>) { <statement> } [elseif (<condition>) { <statement> }] [else { <statement> }]
+- Example: if ($var -eq "value") { Write-Output "Variable is equal to 'value'" }
+
+ForEach:
+- Description: Iterates through items in a collection.
+- Syntax: foreach (<variable> in <collection>) { <statement> }
+- Example: foreach ($item in $collection) { Write-Output $item }
+
+While:
+- Description: Executes a statement or group of statements as long as a specified condition is true.
+- Syntax: while (<condition>) { <statement> }
+- Example: while ($count -lt 10) { Write-Output $count; $count++ }
+
+Function:
+- Description: Defines a new function.
+- Syntax: function <name> { <scriptblock> }
+- Example: function SayHello { Write-Output "Hello, World!" }
+
+New-Module:
+- Description: Creates a new dynamic module.
+- Syntax: New-Module [[-Name] <String>] [-ScriptBlock <ScriptBlock>] [-Function <Hashtable>] [-Cmdlet <Hashtable>] [-Variable <Hashtable>] [-Alias <Hashtable>] [-AsCustomObject] [<CommonParameters>]
+- Example: New-Module -ScriptBlock { function Test { Write-Output "This is a test function." } }
+
+Import-Module:
+- Description: Imports a module into the current session.
+- Syntax: Import-Module [-Name] <String[]> [-Function <Hashtable>] [-Cmdlet <Hashtable>] [-Variable <Hashtable>] [-Alias <Hashtable>] [-ArgumentList <Object[]>] [-PassThru] [-Global] [-NoClobber] [-Force] [-Prefix <String>] [-DisableNameChecking] [-AsCustomObject] [<CommonParameters>]
+- Example: Import-Module MyModule
+
+Try:
+- Description: Implements error handling for a block of script code.
+- Syntax: try { <statements> } catch { <statements> } finally { <statements> }
+- Example: try { Get-Process } catch { Write-Error "An error occurred." }
+
+Catch:
+- Description: Defines a block of script code to handle errors generated by a preceding try block.
+- Syntax: catch { <statements> }
+- Example: catch { Write-Error "An error occurred." }
+
+Finally:
+- Description: Defines a block of script code that runs regardless of whether an error occurred in a preceding try block.
+- Syntax: finally
