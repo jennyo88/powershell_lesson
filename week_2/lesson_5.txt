@@ -1,55 +1,99 @@
-Working with Files and Folders
+Scripting and Automation with PowerShell Functions
 =================================================================================
 
----------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-PowerShell provides powerful cmdlets for working with files and folders, allowing you to automate common file system tasks.
-This lesson will cover basic file and folder manipulation, including creating, copying, moving, renaming, and deleting files and folders.
+Functions are a fundamental aspect of PowerShell scripting, allowing you to encapsulate reusable blocks of code.
+Understanding how to create and use functions is essential for building modular and maintainable scripts.
+This lesson will cover the basics of scripting and automation with PowerShell functions, including function definition, parameterization, and usage.
 
+Topics Covered:
 ---------------------------------------------------------------------------------
-Commands Covered:
----------------------------------------------------------------------------------
-1. New-Item:
-   - Description: Creates a new item (file or folder) at the specified location.
-   - Syntax: New-Item [-Path] <String> [-ItemType <String>] [-Name <String>] [-Value <Object>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
-   - Example: New-Item -Path "C:\NewFolder" -ItemType Directory
+1. Introduction to PowerShell Functions:
+   - Explanation of what functions are and their role in PowerShell scripting.
+   - Understanding the benefits of using functions for code encapsulation and reuse.
 
-2. Copy-Item:
-   - Description: Copies an item from one location to another.
-   - Syntax: Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Force] [-Recurse] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
-   - Example: Copy-Item -Path "C:\Source\File.txt" -Destination "D:\Destination\" -Force
+    Example:
+    ```powershell
+    # Function to greet a user
+    function Get-Greeting {
+        param(
+            [string]$Name
+        )
+        "Hello, $Name!"
+    }
 
-3. Move-Item:
-   - Description: Moves an item from one location to another.
-   - Syntax: Move-Item [-Path] <String[]> [-Destination] <String> [-Credential <PSCredential>] [-Force] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
-   - Example: Move-Item -Path "C:\Source\File.txt" -Destination "C:\Destination\" -Force
+    # Call the function
+    Get-Greeting -Name "John"
+    ```
 
-4. Rename-Item:
-   - Description: Renames an item.
-   - Syntax: Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
-   - Example: Rename-Item -Path "C:\OldName.txt" -NewName "NewName.txt"
+2. Defining Functions:
+   - Syntax for defining functions in PowerShell.
+   - Naming conventions and best practices for function names.
 
-5. Remove-Item:
-   - Description: Deletes an item.
-   - Syntax: Remove-Item [-Path] <String[]> [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
-   - Example: Remove-Item -Path "C:\ToDelete" -Recurse -Force
+    Example:
+    ```powershell
+    # Function to calculate the square of a number
+    function Square {
+        param(
+            [int]$Number
+        )
+        return $Number * $Number
+    }
+    ```
 
----------------------------------------------------------------------------------
+3. Parameterizing Functions:
+   - Adding parameters to functions to make them more flexible and versatile.
+   - Specifying parameter types, default values, and validation.
+
+    Example:
+    ```powershell
+    # Function to greet a user with optional message
+    function Get-Greeting {
+        param(
+            [string]$Name,
+            [string]$Message = "Hello"
+        )
+        "$Message, $Name!"
+    }
+    ```
+
+4. Using Functions:
+   - Calling functions from within scripts and the PowerShell console.
+   - Passing arguments to functions and handling return values.
+
+    Example:
+    ```powershell
+    # Function to add two numbers
+    function Add-Numbers {
+        param(
+            [int]$Num1,
+            [int]$Num2
+        )
+        return $Num1 + $Num2
+    }
+
+    # Call the function and store the result
+    $sum = Add-Numbers -Num1 10 -Num2 20
+    ```
+
 Practice:
 ---------------------------------------------------------------------------------
-To gain proficiency in working with files and folders in PowerShell, practice the following tasks:
+To gain proficiency in scripting and automation with PowerShell functions, practice the following tasks:
 
-1. Create a new folder named "Scripts" in the C:\ directory.
+1. Create a function to automate a specific task:
+   - Identify a repetitive task in your workflow that can be automated with a PowerShell function.
+   - Define a function that encapsulates the necessary steps to perform the task.
+   - Test the function with different inputs to ensure it behaves as expected.
 
-2. Copy a file named "Document.docx" from the C:\Temp\ directory to the D:\Backups\ directory.
+2. Parameterize an existing script with a function:
+   - Take an existing PowerShell script that performs a specific task.
+   - Refactor the script to convert the main logic into a function.
+   - Add parameters to the function to make it more flexible and reusable.
 
-3. Move a file named "Data.csv" from the D:\Temp\ directory to the D:\Archive\ directory.
+3. Utilize functions in a script:
+   - Write a PowerShell script that utilizes multiple functions to accomplish a complex task.
+   - Organize the script by grouping related functions together.
+   - Test the script with various scenarios to verify its functionality.
 
-4. Rename a file named "Report.txt" to "MonthlyReport.txt" in the C:\Reports\ directory.
-
-5. Remove a folder named "OldFiles" along with all its contents from the D:\ directory.
-
-6. Create a new text file named "Log.txt" in the C:\Logs\ directory.
-
-By completing these tasks, you will gain practical experience in performing file and folder manipulation tasks using PowerShell, enabling you to automate file system operations effectively.
+By practicing these tasks, you will enhance your proficiency in scripting and automation with PowerShell functions, empowering you to build efficient and maintainable scripts for a wide range of use cases.
