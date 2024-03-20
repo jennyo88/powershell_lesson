@@ -1,10 +1,9 @@
-Getting Started with PowerShell
+Lesson 1: Getting Started with PowerShell
 =================================================================================
 
 Overview:
 ---------------------------------------------------------------------------------
-PowerShell is a powerful scripting language and automation framework primarily designed for system administration tasks.
-It plays a crucial role in modern IT environments for automating repetitive tasks, managing systems, and streamlining workflows.
+PowerShell is a powerful scripting language and automation framework primarily designed for system administration tasks. It plays a crucial role in modern IT environments for automating repetitive tasks, managing systems, and streamlining workflows.
 
 Commands Covered:
 ---------------------------------------------------------------------------------
@@ -13,22 +12,38 @@ Commands Covered:
    - Syntax: Get-Command [-Name <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-ShowCommandInfo] [-FullyQualifiedModule <ModuleSpecification[]>] [-ListImported] [<CommonParameters>]
    - Example: Get-Command
 
+    Example:
+    ```powershell
+    # Retrieve all available commands
+    Get-Command
+    ```
+
 2. Get-Help:
    - Description: Retrieves help information about PowerShell commands and concepts.
    - Syntax: Get-Help [-Name] <String[]> [-Parameter <String>] [-Component <String[]>] [-Functionality <String[]>] [-Role <String>] [-Category <String[]>] [-Full] [-Online] [<CommonParameters>]
    - Example: Get-Help Get-Service
+
+    Example:
+    ```powershell
+    # Retrieve help information for Get-Service command
+    Get-Help Get-Service
+    ```
 
 3. Get-Service:
    - Description: Retrieves the status of services on a computer.
    - Syntax: Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-DisplayName <String[]>] [-InputObject <ServiceController[]>] [-StartupType <String[]>] [<CommonParameters>]
    - Example: Get-Service
 
+    Example:
+    ```powershell
+    # Retrieve status of all services
+    Get-Service
+    ```
+
 Practice:
 ---------------------------------------------------------------------------------
 To reinforce learning, practice the following tasks:
 
 1. List all available commands in PowerShell using the Get-Command cmdlet.
-
 2. Retrieve help information for the Get-Service cmdlet using the Get-Help cmdlet.
-
 3. List all running services on your system using the Get-Service cmdlet.
