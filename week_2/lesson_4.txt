@@ -1,51 +1,44 @@
-|   Variables and Data Types   |
-================================
-- Variables:
-  - Variables in PowerShell are used to store and manipulate data.
-  - They provide a way to temporarily hold values for later use in scripts and commands.
-  - Variable names begin with a dollar sign ($) and are case-insensitive.
-  - PowerShell supports dynamic typing, meaning variables can hold values of any data type.
+Variables and Data Types
+=================================================================================
 
-    Example:
-    - `$name = "John"` assigns the string "John" to the variable $name.
-    - `$age = 30` assigns the integer 30 to the variable $age.
+---------------------------------------------------------------------------------
+Overview:
+---------------------------------------------------------------------------------
+- Variables are used to store and manipulate data in PowerShell scripts.
+- PowerShell supports different data types such as strings, integers, arrays, and hashtables.
+- Understanding variable scope and lifetime is crucial for writing efficient scripts.
 
-- Data types:
-  - PowerShell supports various data types, including:
-    - String: A sequence of characters enclosed in single or double quotes.
-    - Integer: Whole numbers without decimals.
-    - Float: Numbers with decimals.
-    - Boolean: Represents true or false values.
-    - Array: Ordered collection of values.
-    - Hashtable: Collection of key-value pairs.
-    - Null: Represents the absence of value.
-    - DateTime: Represents date and time values.
+---------------------------------------------------------------------------------
+Topics Covered:
+---------------------------------------------------------------------------------
+1. Variables:
+   - Description: Variables are containers used to store data.
+   - Syntax: $variableName = value
+   - Example: $name = "John"
 
-    Example:
-    - `$name = "John"` (String)
-    - `$age = 30` (Integer)
-    - `$pi = 3.14` (Float)
-    - `$isAdult = $true` (Boolean)
-    - `$numbers = 1, 2, 3, 4, 5` (Array)
-    - `$person = @{Name="John"; Age=30}` (Hashtable)
-    - `$nullVar = $null` (Null)
-    - `$currentDate = Get-Date` (DateTime)
+2. Data Types:
+   a. String:
+      - Description: Represents a sequence of characters.
+      - Example: $message = "Hello, World!"
 
-- Automatic variables:
-  - PowerShell includes a set of automatic variables that contain system or script-related information.
-  - These variables are predefined and can be used without declaration.
-  - Examples include $PSVersionTable, $Error, $PSCulture, etc.
+   b. Integer:
+      - Description: Represents whole numbers.
+      - Example: $count = 10
 
-    Example:
-    - `$PSVersionTable.PSVersion` provides information about the installed PowerShell version.
-    - `$Error` contains information about the most recent error that occurred in the session.
+   c. Array:
+      - Description: Represents a collection of elements.
+      - Example: $numbers = @(1, 2, 3, 4, 5)
 
-- Variable scope:
-  - Variable scope determines where a variable can be accessed within a script or command.
-  - PowerShell supports various scopes, including script scope, global scope, local scope, and private scope.
+   d. Hashtable:
+      - Description: Represents a collection of key-value pairs.
+      - Example: $person = @{
+                     Name = "Alice"
+                     Age = 30
+                  }
 
-    Example:
-    - `$global:varName` accesses a variable in the global scope.
-    - `$script:varName` accesses a variable in the script scope.
-    - `$local:varName` accesses a variable in the local scope.
-    - `$private:varName` accesses a variable in the private scope.
+---------------------------------------------------------------------------------
+Practice:
+---------------------------------------------------------------------------------
+- Declare variables of different types (string, integer, array, hashtable) and assign values to them.
+- Manipulate string variables by concatenating them with other strings.
+- Create an array of numbers and iterate through it using a loop.
