@@ -1,15 +1,15 @@
 Getting Started with PowerShell
-===============================
+=================================================================================
 
--------------------------------
+---------------------------------------------------------------------------------
 Overview:
--------------------------------
+---------------------------------------------------------------------------------
 - Introduction to PowerShell, a powerful scripting language and automation framework primarily designed for system administration tasks.
 - Importance of PowerShell in modern IT environments for automating repetitive tasks, managing systems, and streamlining workflows.
 
--------------------------------
+---------------------------------------------------------------------------------
 Commands Covered:
--------------------------------
+---------------------------------------------------------------------------------
 1. Get-Command:
    - Description: Retrieves all available commands in PowerShell.
    - Syntax: Get-Command [-Name <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-ShowCommandInfo] [-FullyQualifiedModule <ModuleSpecification[]>] [-ListImported] [<CommonParameters>]
@@ -25,9 +25,9 @@ Commands Covered:
    - Syntax: Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-DisplayName <String[]>] [-InputObject <ServiceController[]>] [-StartupType <String[]>] [<CommonParameters>]
    - Example: Get-Service
 
--------------------------------
+---------------------------------------------------------------------------------
 Practice:
--------------------------------
+---------------------------------------------------------------------------------
 - List all available commands in PowerShell using the Get-Command cmdlet.
 - Retrieve help information for the Get-Service cmdlet using the Get-Help cmdlet.
 - List all running services on your system using the Get-Service cmdlet.
