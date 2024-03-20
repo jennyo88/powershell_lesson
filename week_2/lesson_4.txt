@@ -1,44 +1,120 @@
-Variables and Data Types
+Scripting Basics
 =================================================================================
 
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-- Variables are used to store and manipulate data in PowerShell scripts.
-- PowerShell supports different data types such as strings, integers, arrays, and hashtables.
-- Understanding variable scope and lifetime is crucial for writing efficient scripts.
+Scripting in PowerShell involves creating reusable scripts to automate tasks, perform complex operations, and interact with various system components. This lesson will cover the basics of PowerShell scripting, including script structure, variables, flow control, and functions.
 
 ---------------------------------------------------------------------------------
 Topics Covered:
 ---------------------------------------------------------------------------------
-1. Variables:
-   - Description: Variables are containers used to store data.
-   - Syntax: $variableName = value
-   - Example: $name = "John"
+1. Script Structure:
+   - Basic structure of a PowerShell script.
+   - Creating and saving a script file.
+   - Running a script from the command line.
 
-2. Data Types:
-   a. String:
-      - Description: Represents a sequence of characters.
-      - Example: $message = "Hello, World!"
+2. Variables:
+   - Declaring variables in PowerShell.
+   - Variable types (e.g., string, integer, array).
+   - Variable scope (e.g., local, global).
 
-   b. Integer:
-      - Description: Represents whole numbers.
-      - Example: $count = 10
+3. Flow Control:
+   - Conditional statements (If/Else).
+   - Looping structures (For, ForEach, While).
+   - Break and Continue statements.
 
-   c. Array:
-      - Description: Represents a collection of elements.
-      - Example: $numbers = @(1, 2, 3, 4, 5)
-
-   d. Hashtable:
-      - Description: Represents a collection of key-value pairs.
-      - Example: $person = @{
-                     Name = "Alice"
-                     Age = 30
-                  }
+4. Functions:
+   - Defining and calling functions.
+   - Parameters and arguments.
+   - Returning values from functions.
 
 ---------------------------------------------------------------------------------
 Practice:
 ---------------------------------------------------------------------------------
-- Declare variables of different types (string, integer, array, hashtable) and assign values to them.
-- Manipulate string variables by concatenating them with other strings.
-- Create an array of numbers and iterate through it using a loop.
+To solidify your understanding of PowerShell scripting basics, practice the following tasks:
+
+1. Write a PowerShell script that prompts the user to enter their name, then displays a personalized greeting message.
+
+    Example:
+    ```
+    $name = Read-Host "Enter your name"
+    Write-Host "Hello, $name! Welcome to PowerShell scripting."
+    ```
+
+2. Create a script that takes two numbers as input from the user and calculates their sum, difference, product, and quotient. Display the results.
+
+    Example:
+    ```
+    $num1 = Read-Host "Enter first number"
+    $num2 = Read-Host "Enter second number"
+    
+    $sum = $num1 + $num2
+    $difference = $num1 - $num2
+    $product = $num1 * $num2
+    $quotient = $num1 / $num2
+    
+    Write-Host "Sum: $sum"
+    Write-Host "Difference: $difference"
+    Write-Host "Product: $product"
+    Write-Host "Quotient: $quotient"
+    ```
+
+3. Write a script that iterates through a list of numbers (e.g., 1 to 10) and prints whether each number is even or odd.
+
+    Example:
+    ```
+    1..10 | ForEach-Object {
+        if ($_ % 2 -eq 0) {
+            Write-Host "$_ is even"
+        } else {
+            Write-Host "$_ is odd"
+        }
+    }
+    ```
+
+4. Develop a script that checks if a given directory exists. If it does, display a message indicating its existence; otherwise, create the directory and inform the user.
+
+    Example:
+    ```
+    $directory = "C:\MyDirectory"
+    
+    if (Test-Path $directory) {
+        Write-Host "Directory already exists: $directory"
+    } else {
+        New-Item -ItemType Directory -Path $directory
+        Write-Host "Directory created: $directory"
+    }
+    ```
+
+5. Define a function in a script that takes two parameters (e.g., $num1 and $num2) and returns the larger of the two numbers.
+
+    Example:
+    ```
+    function Get-LargerNumber {
+        param (
+            [int]$num1,
+            [int]$num2
+        )
+        
+        if ($num1 -gt $num2) {
+            return $num1
+        } else {
+            return $num2
+        }
+    }
+    
+    $result = Get-LargerNumber 10 20
+    Write-Host "Larger number: $result"
+    ```
+
+6. Create a script that reads a text file and counts the number of lines it contains. Display the total line count.
+
+    Example:
+    ```
+    $file = "C:\MyFile.txt"
+    $lineCount = (Get-Content $file | Measure-Object -Line).Lines
+    Write-Host "Total lines in file: $lineCount"
+    ```
+
+By completing these tasks, you will gain practical experience in PowerShell scripting fundamentals, preparing you to tackle more complex automation tasks in your IT environment.
