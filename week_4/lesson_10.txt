@@ -1,0 +1,50 @@
+|   Working with Processes   |
+==============================
+- Managing processes:
+  - Processes are running instances of programs on a computer.
+  - PowerShell provides cmdlets like Get-Process, Start-Process, Stop-Process, and Restart-Service for managing processes.
+
+    Example:
+    - Get a list of all processes running on the local computer:
+      ```powershell
+      Get-Process
+      ```
+
+- Filtering and sorting processes:
+  - PowerShell allows you to filter and sort processes based on specific criteria using Where-Object and Sort-Object cmdlets.
+
+    Example:
+    - Get a list of processes consuming more than a specified amount of CPU:
+      ```powershell
+      Get-Process | Where-Object { $_.CPU -gt 50 } | Sort-Object -Property CPU -Descending
+      ```
+
+- Monitoring processes:
+  - PowerShell enables you to monitor process performance and resource usage, allowing you to identify and troubleshoot performance issues.
+
+    Example:
+    - Monitor memory usage of a specific process:
+      ```powershell
+      $process = Get-Process -Name "process_name"
+      Write-Host "Memory usage of process: $($process.Name) - $($process.WorkingSet64) bytes"
+      ```
+
+- Terminating processes:
+  - PowerShell allows you to terminate (end) processes that are no longer needed using the Stop-Process cmdlet.
+
+    Example:
+    - Terminate a specific process by its name:
+      ```powershell
+      Stop-Process -Name "process_name" -Force
+      ```
+
+- Advanced process management:
+  - PowerShell provides additional cmdlets and techniques for advanced process management, such as setting process priorities and affinity.
+
+    Example:
+    - Set the priority of a specific process:
+      ```powershell
+      $process = Get-Process -Name "process_name"
+      $process.PriorityClass = "High"
+      ```
+
