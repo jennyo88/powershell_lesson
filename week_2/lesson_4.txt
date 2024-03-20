@@ -117,9 +117,6 @@ To solidify your understanding of PowerShell scripting basics, practice the foll
 
 By completing these tasks, you will gain practical experience in PowerShell scripting fundamentals, preparing you to tackle more complex automation tasks in your IT environment.
 
-This lesson covers the basics of PowerShell scripting, including script structure, variables, flow control, and functions, with examples provided for each topic.
-The practice section offers exercises to reinforce these concepts and build practical scripting skills.
-
 
 
 
