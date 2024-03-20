@@ -1,41 +1,34 @@
 Getting Started with PowerShell
 =================================================================================
 
----------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-PowerShell is a versatile and powerful scripting language and automation framework primarily designed for system administration tasks.
-It provides a command-line shell and scripting language built on the .NET Framework, offering administrators a robust toolset for managing Windows environments efficiently.
-In modern IT environments, PowerShell plays a crucial role in automating repetitive tasks, managing systems, and streamlining workflows, making it an essential skill for IT professionals.
+PowerShell is a powerful scripting language and automation framework primarily designed for system administration tasks.
+It plays a crucial role in modern IT environments for automating repetitive tasks, managing systems, and streamlining workflows.
 
----------------------------------------------------------------------------------
 Commands Covered:
 ---------------------------------------------------------------------------------
 1. Get-Command:
    - Description: Retrieves all available commands in PowerShell.
    - Syntax: Get-Command [-Name <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-ShowCommandInfo] [-FullyQualifiedModule <ModuleSpecification[]>] [-ListImported] [<CommonParameters>]
    - Example: Get-Command
-   - This command is fundamental for discovering available PowerShell commands. For instance, running `Get-Command` without any parameters will list all available commands, including cmdlets, functions, aliases, and scripts.
 
 2. Get-Help:
    - Description: Retrieves help information about PowerShell commands and concepts.
    - Syntax: Get-Help [-Name] <String[]> [-Parameter <String>] [-Component <String[]>] [-Functionality <String[]>] [-Role <String>] [-Category <String[]>] [-Full] [-Online] [<CommonParameters>]
    - Example: Get-Help Get-Service
-   - This command is essential for understanding the usage and functionality of PowerShell commands. For example, running `Get-Help Get-Service` will provide detailed documentation about the Get-Service cmdlet, including syntax, parameters, examples, and related topics.
 
 3. Get-Service:
    - Description: Retrieves the status of services on a computer.
    - Syntax: Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-DisplayName <String[]>] [-InputObject <ServiceController[]>] [-StartupType <String[]>] [<CommonParameters>]
    - Example: Get-Service
-   - This command is commonly used for managing services on Windows systems. Running `Get-Service` without any parameters will list all services and their statuses on the local machine.
 
----------------------------------------------------------------------------------
 Practice:
 ---------------------------------------------------------------------------------
-To solidify understanding and gain practical experience, it's essential to engage in hands-on exercises. Here are some practice tasks for Lesson 1:
+To reinforce learning, practice the following tasks:
 
-1. List all available commands in PowerShell using the Get-Command cmdlet. Explore the extensive list of cmdlets, functions, aliases, and scripts available for use in your environment.
+1. List all available commands in PowerShell using the Get-Command cmdlet.
 
-2. Retrieve help information for the Get-Service cmdlet using the Get-Help cmdlet. Familiarize yourself with the documentation provided, including syntax, parameters, examples, and related topics.
+2. Retrieve help information for the Get-Service cmdlet using the Get-Help cmdlet.
 
-3. List all running services on your system using the Get-Service cmdlet. Examine the status, display name, and other properties of services running on your local machine, gaining insight into system management capabilities offered by PowerShell.
+3. List all running services on your system using the Get-Service cmdlet.
