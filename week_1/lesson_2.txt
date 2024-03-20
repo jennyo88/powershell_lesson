@@ -4,7 +4,8 @@ Working with Objects
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-PowerShell is based on the .NET Framework and treats everything as an object. Understanding how to work with objects in PowerShell is crucial for effective scripting and automation. This lesson will cover the basics of working with objects, including retrieving object properties and methods.
+PowerShell is based on the .NET Framework and treats everything as an object. Understanding how to work with objects in PowerShell is crucial for effective scripting and automation.
+This lesson will cover the basics of working with objects, including retrieving object properties and methods.
 
 ---------------------------------------------------------------------------------
 Commands Covered:
