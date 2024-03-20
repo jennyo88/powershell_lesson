@@ -13,19 +13,19 @@ Commands Covered:
    - Description: Retrieves all available commands in PowerShell.
    - Syntax: Get-Command [-Name <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-ShowCommandInfo] [-FullyQualifiedModule <ModuleSpecification[]>] [-ListImported] [<CommonParameters>]
    - Example: Get-Command
-   - This command is fundamental for discovering available PowerShell commands, allowing users to explore the extensive range of functionalities offered by PowerShell. It provides a comprehensive list of all cmdlets, functions, aliases, and scripts available in the current environment.
+   - This command is fundamental for discovering available PowerShell commands. For instance, running `Get-Command` without any parameters will list all available commands, including cmdlets, functions, aliases, and scripts.
 
 2. Get-Help:
    - Description: Retrieves help information about PowerShell commands and concepts.
    - Syntax: Get-Help [-Name] <String[]> [-Parameter <String>] [-Component <String[]>] [-Functionality <String[]>] [-Role <String>] [-Category <String[]>] [-Full] [-Online] [<CommonParameters>]
    - Example: Get-Help Get-Service
-   - This command is essential for understanding the usage and functionality of PowerShell commands. It provides detailed documentation, including syntax, parameters, examples, and related topics, helping users effectively utilize PowerShell commands and concepts.
+   - This command is essential for understanding the usage and functionality of PowerShell commands. For example, running `Get-Help Get-Service` will provide detailed documentation about the Get-Service cmdlet, including syntax, parameters, examples, and related topics.
 
 3. Get-Service:
    - Description: Retrieves the status of services on a computer.
    - Syntax: Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-DisplayName <String[]>] [-InputObject <ServiceController[]>] [-StartupType <String[]>] [<CommonParameters>]
    - Example: Get-Service
-   - This command is commonly used for managing services on Windows systems. It provides information about the status, display name, and other properties of services running on the local or remote computers. It is invaluable for troubleshooting and managing system services efficiently.
+   - This command is commonly used for managing services on Windows systems. Running `Get-Service` without any parameters will list all services and their statuses on the local machine.
 
 ---------------------------------------------------------------------------------
 Practice:
