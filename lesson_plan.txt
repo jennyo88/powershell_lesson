@@ -1,0 +1,83 @@
+CRASH COURSE ON PowerShell
+=========================
+|   Lesson 1: Introduction to PowerShell   |
+=========================
+- Overview of PowerShell: Purpose and advantages.
+- Installation: Installing PowerShell on different operating systems.
+- Launching PowerShell: Command-line interface vs. Integrated Scripting Environment (ISE).
+
+=========================
+|   Lesson 2: PowerShell Basics   |
+=========================
+- Cmdlets: Understanding and using cmdlets.
+- Basic syntax: Verb-Noun structure, parameters, and arguments.
+- Common cmdlets: Get-Help, Get-Command, Get-Process, Get-Service.
+- Using the pipeline: Piping output from one cmdlet to another.
+
+=========================
+|   Lesson 3: Working with Objects   |
+=========================
+- Understanding objects: Properties and methods.
+- Selecting properties: Using Select-Object.
+- Filtering objects: Using Where-Object.
+- Sorting objects: Using Sort-Object.
+
+=========================
+|   Lesson 4: Variables and Data Types   |
+=========================
+- Variables: Declaring and using variables.
+- Data types: Different data types in PowerShell.
+- Automatic variables: Commonly used automatic variables.
+- Variable scope: Local and global variable scope.
+
+=========================
+|   Lesson 5: Control Flow   |
+=========================
+- Conditional statements: Using if, elseif, else.
+- Loops: Using foreach and for loops.
+- Break and continue: Controlling loop execution.
+- Error handling: Using try-catch-finally blocks.
+
+=========================
+|   Lesson 6: Scripting in PowerShell   |
+=========================
+- Writing scripts: Creating and executing PowerShell scripts.
+- Script parameters: Passing parameters to scripts.
+- Functions: Defining and using functions.
+- Best practices: Writing clean and efficient scripts.
+
+=========================
+|   Lesson 7: Managing Files and Folders   |
+=========================
+- Working with files and folders: Using cmdlets like Get-ChildItem, Copy-Item, Move-Item, and Remove-Item.
+- Manipulating file content: Using cmdlets like Get-Content, Set-Content, Add-Content.
+- Filesystem navigation: Navigating the filesystem.
+
+=========================
+|   Lesson 8: Remote Management with PowerShell   |
+=========================
+- Remoting basics: Enabling PowerShell remoting.
+- Connecting to remote computers: Using Enter-PSSession and Invoke-Command.
+- Remote session management: Managing sessions with Import-PSSession and Remove-PSSession.
+- Using PowerShell remoting for automation and administration.
+
+=========================
+|   Lesson 9: Working with Services   |
+=========================
+- Managing services: Using cmdlets like Get-Service, Start-Service, Stop-Service, and Restart-Service.
+- Filtering and sorting services: Applying filters and sorting to service objects.
+- Monitoring services: Checking service status and performance.
+
+=========================
+|   Lesson 10: PowerShell Modules and Extensions   |
+=========================
+- Understanding PowerShell modules: What they are and how to use them.
+- Importing and using modules: Using Import-Module and Install-Module cmdlets.
+- Exploring popular PowerShell modules: Examples include Active Directory, Exchange Online, Azure, etc.
+
+=========================
+|   Conclusion and Further Learning   |
+=========================
+- Recap of key concepts learned throughout the course.
+- Resources for further learning: Websites, books, online courses, and communities for PowerShell enthusiasts.
+- Encouragement for continued exploration and practice.
