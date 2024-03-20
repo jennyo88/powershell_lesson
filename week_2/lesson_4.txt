@@ -1,0 +1,51 @@
+|   Variables and Data Types   |
+================================
+- Variables:
+  - Variables in PowerShell are used to store and manipulate data.
+  - They provide a way to temporarily hold values for later use in scripts and commands.
+  - Variable names begin with a dollar sign ($) and are case-insensitive.
+  - PowerShell supports dynamic typing, meaning variables can hold values of any data type.
+
+    Example:
+    - `$name = "John"` assigns the string "John" to the variable $name.
+    - `$age = 30` assigns the integer 30 to the variable $age.
+
+- Data types:
+  - PowerShell supports various data types, including:
+    - String: A sequence of characters enclosed in single or double quotes.
+    - Integer: Whole numbers without decimals.
+    - Float: Numbers with decimals.
+    - Boolean: Represents true or false values.
+    - Array: Ordered collection of values.
+    - Hashtable: Collection of key-value pairs.
+    - Null: Represents the absence of value.
+    - DateTime: Represents date and time values.
+
+    Example:
+    - `$name = "John"` (String)
+    - `$age = 30` (Integer)
+    - `$pi = 3.14` (Float)
+    - `$isAdult = $true` (Boolean)
+    - `$numbers = 1, 2, 3, 4, 5` (Array)
+    - `$person = @{Name="John"; Age=30}` (Hashtable)
+    - `$nullVar = $null` (Null)
+    - `$currentDate = Get-Date` (DateTime)
+
+- Automatic variables:
+  - PowerShell includes a set of automatic variables that contain system or script-related information.
+  - These variables are predefined and can be used without declaration.
+  - Examples include $PSVersionTable, $Error, $PSCulture, etc.
+
+    Example:
+    - `$PSVersionTable.PSVersion` provides information about the installed PowerShell version.
+    - `$Error` contains information about the most recent error that occurred in the session.
+
+- Variable scope:
+  - Variable scope determines where a variable can be accessed within a script or command.
+  - PowerShell supports various scopes, including script scope, global scope, local scope, and private scope.
+
+    Example:
+    - `$global:varName` accesses a variable in the global scope.
+    - `$script:varName` accesses a variable in the script scope.
+    - `$local:varName` accesses a variable in the local scope.
+    - `$private:varName` accesses a variable in the private scope.
