@@ -1,41 +1,33 @@
-|   Working with Objects   |
-============================
-- Understanding objects:
-  - In PowerShell, everything is treated as an object. Objects are instances of .NET classes that encapsulate data and behavior.
-  - Objects have properties, which are attributes that describe the object, and methods, which are actions that the object can perform.
-  - PowerShell cmdlets typically output objects, allowing for consistent and flexible data manipulation.
+PowerShell Pipeline
+=================================================================================
 
-    Example:
-    - `$process = Get-Process | Where-Object { $_.Name -eq "chrome" }`
-    - `$process` now contains an object representing the Chrome process, with properties like Name, ID, CPU usage, etc., and methods like Kill(), Start(), Stop().
+---------------------------------------------------------------------------------
+Overview:
+---------------------------------------------------------------------------------
+- The PowerShell pipeline allows you to pass the output of one command (cmdlet) as input to another, enabling the chaining of commands for powerful data manipulation.
+- Commands such as Select-Object, Where-Object, and ForEach-Object are frequently used in conjunction with the pipeline.
 
-- Selecting properties:
-  - Select-Object cmdlet is used to select specific properties from objects.
-  - It allows users to filter out unnecessary information and focus on relevant data.
+---------------------------------------------------------------------------------
+Topics Covered:
+---------------------------------------------------------------------------------
+1. Select-Object:
+   - Description: Selects specific properties of objects.
+   - Syntax: Select-Object [-Property] <Object[]> [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-Index <Int32>] [-Skip <Int32>] [-First <Int32>] [-Last <Int32>] [<CommonParameters>]
+   - Example: Get-Process | Select-Object Name, Id
 
-    Example:
-    - `Get-Process | Select-Object -Property Name, CPU, Handles` selects only the Name, CPU, and Handles properties from the output of Get-Process.
+2. Where-Object:
+   - Description: Filters objects based on specified criteria.
+   - Syntax: Where-Object [-FilterScript] <ScriptBlock> [-InputObject <psobject>] [-Property <String>] [-Value <Object>] [-EQ <Object>] [-NE <Object>] [-LT <Object>] [-LE <Object>] [-GT <Object>] [-GE <Object>] [-Like <Object>] [-NotLike <Object>] [-Match <Object>] [-NotMatch <Object>] [-Contains <Object>] [-NotContains <Object>] [-In <Object[]>] [-NotIn <Object[]>] [-Replace <String>] [-As <String>] [<CommonParameters>]
+   - Example: Get-Process | Where-Object { $_.WorkingSet -gt 100MB }
 
-- Filtering objects:
-  - Where-Object cmdlet is used to filter objects based on specified criteria.
-  - It allows users to selectively process objects that meet specific conditions.
+3. ForEach-Object:
+   - Description: Performs an operation on each object in the pipeline.
+   - Syntax: ForEach-Object [-Process] <ScriptBlock> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [-InputObject <psobject>] [<CommonParameters>]
+   - Example: Get-ChildItem | ForEach-Object { $_.Name }
 
-    Example:
-    - `Get-Service | Where-Object { $_.Status -eq "Running" }` retrieves only running services.
-    - `Get-Process | Where-Object { $_.CPU -gt 50 }` retrieves processes with CPU usage greater than 50%.
-
-- Sorting objects:
-  - Sort-Object cmdlet is used to sort objects based on specified properties.
-  - It allows users to arrange objects in ascending or descending order.
-
-    Example:
-    - `Get-Process | Sort-Object -Property CPU -Descending` sorts processes based on CPU usage in descending order.
-    - `Get-Service | Sort-Object -Property DisplayName` sorts services alphabetically by display name.
-
-- Advanced object manipulation:
-  - PowerShell provides additional cmdlets and techniques for advanced object manipulation, such as grouping, formatting, and calculating properties.
-  - These techniques enable users to perform complex data operations efficiently.
-
-    Example:
-    - `Get-Process | Group-Object -Property Company` groups processes by their company names.
-    - `Get-Service | Format-Table -AutoSize` formats service information into a table with auto-sized columns.
+---------------------------------------------------------------------------------
+Practice:
+---------------------------------------------------------------------------------
+- List files in a directory and filter them by file extension using Get-ChildItem and Where-Object.
+- Get the process IDs and names of processes consuming the most memory using Get-Process, Sort-Object, and Select-Object.
+- Display a list of running services, select specific properties using Select-Object, and format the output.
