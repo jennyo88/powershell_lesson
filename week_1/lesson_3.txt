@@ -4,30 +4,47 @@ PowerShell Pipeline
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-- The PowerShell pipeline allows you to pass the output of one command (cmdlet) as input to another, enabling the chaining of commands for powerful data manipulation.
-- Commands such as Select-Object, Where-Object, and ForEach-Object are frequently used in conjunction with the pipeline.
+The PowerShell pipeline is a powerful feature that allows the output of one cmdlet to be passed as input to another cmdlet, enabling efficient and concise command chaining. By using the pipeline, users can combine multiple commands to perform complex operations in a single line, streamlining their workflow and enhancing productivity.
 
 ---------------------------------------------------------------------------------
-Topics Covered:
+Commands Covered:
 ---------------------------------------------------------------------------------
 1. Select-Object:
-   - Description: Selects specific properties of objects.
-   - Syntax: Select-Object [-Property] <Object[]> [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-Index <Int32>] [-Skip <Int32>] [-First <Int32>] [-Last <Int32>] [<CommonParameters>]
-   - Example: Get-Process | Select-Object Name, Id
+   - Description: The Select-Object cmdlet is used to select and manipulate specific properties of objects.
+   - Syntax: Select-Object [-Property <Object[]>] [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-First <Int32>] [-Last <Int32>] [-Skip <Int32>] [-Unique] [<CommonParameters>]
+   - Example: Get-Process | Select-Object Name, CPU
+   - Usage: Select-Object allows users to filter and customize the properties displayed for each object in the pipeline output. This is useful for focusing on relevant information and reducing clutter in the output.
 
 2. Where-Object:
-   - Description: Filters objects based on specified criteria.
-   - Syntax: Where-Object [-FilterScript] <ScriptBlock> [-InputObject <psobject>] [-Property <String>] [-Value <Object>] [-EQ <Object>] [-NE <Object>] [-LT <Object>] [-LE <Object>] [-GT <Object>] [-GE <Object>] [-Like <Object>] [-NotLike <Object>] [-Match <Object>] [-NotMatch <Object>] [-Contains <Object>] [-NotContains <Object>] [-In <Object[]>] [-NotIn <Object[]>] [-Replace <String>] [-As <String>] [<CommonParameters>]
-   - Example: Get-Process | Where-Object { $_.WorkingSet -gt 100MB }
+   - Description: The Where-Object cmdlet is used to filter objects based on specified criteria.
+   - Syntax: Where-Object [-FilterScript] <ScriptBlock> [-InputObject <PSObject>] [<CommonParameters>]
+   - Example: Get-Service | Where-Object { $_.Status -eq 'Running' }
+   - Usage: Where-Object enables users to selectively process objects in the pipeline based on conditions defined in a script block. This allows for dynamic filtering of data, facilitating more targeted and precise operations.
 
 3. ForEach-Object:
-   - Description: Performs an operation on each object in the pipeline.
-   - Syntax: ForEach-Object [-Process] <ScriptBlock> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [-InputObject <psobject>] [<CommonParameters>]
-   - Example: Get-ChildItem | ForEach-Object { $_.Name }
+   - Description: The ForEach-Object cmdlet is used to perform an operation on each object in the pipeline.
+   - Syntax: ForEach-Object [-Process] <ScriptBlock> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [<CommonParameters>]
+   - Example: Get-ChildItem | ForEach-Object { Write-Output "File: $($_.Name)" }
+   - Usage: ForEach-Object iterates through each object in the pipeline and executes the specified script block for each object. This allows for custom processing and manipulation of data on a per-object basis.
 
 ---------------------------------------------------------------------------------
 Practice:
 ---------------------------------------------------------------------------------
-- List files in a directory and filter them by file extension using Get-ChildItem and Where-Object.
-- Get the process IDs and names of processes consuming the most memory using Get-Process, Sort-Object, and Select-Object.
-- Display a list of running services, select specific properties using Select-Object, and format the output.
+To gain proficiency in using the PowerShell pipeline, it's essential to practice combining commands and leveraging the pipeline effectively. Here are some practice tasks for Lesson 3:
+
+1. Filter and customize process information:
+   - Use the Get-Process cmdlet to retrieve a list of processes running on your system.
+   - Pipe the output to Select-Object to display only the Name and CPU properties for each process.
+   - Experiment with different properties and combinations to customize the output according to your requirements.
+
+2. Filter services by status:
+   - Use the Get-Service cmdlet to retrieve a list of services installed on your system.
+   - Pipe the output to Where-Object to filter services based on their status (e.g., Running or Stopped).
+   - Explore different conditions and criteria to selectively process services according to their status.
+
+3. Perform custom actions on files:
+   - Use the Get-ChildItem cmdlet to retrieve a list of files in a directory.
+   - Pipe the output to ForEach-Object to perform a custom action (e.g., displaying file names) for each file.
+   - Experiment with different script blocks and operations to manipulate and process files as needed.
+
+By practicing these tasks, you will become more proficient in using the PowerShell pipeline and leveraging its capabilities to streamline your workflow and automate repetitive tasks effectively.
