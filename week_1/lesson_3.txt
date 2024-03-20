@@ -1,0 +1,41 @@
+|   Working with Objects   |
+============================
+- Understanding objects:
+  - In PowerShell, everything is treated as an object. Objects are instances of .NET classes that encapsulate data and behavior.
+  - Objects have properties, which are attributes that describe the object, and methods, which are actions that the object can perform.
+  - PowerShell cmdlets typically output objects, allowing for consistent and flexible data manipulation.
+
+    Example:
+    - `$process = Get-Process | Where-Object { $_.Name -eq "chrome" }`
+    - `$process` now contains an object representing the Chrome process, with properties like Name, ID, CPU usage, etc., and methods like Kill(), Start(), Stop().
+
+- Selecting properties:
+  - Select-Object cmdlet is used to select specific properties from objects.
+  - It allows users to filter out unnecessary information and focus on relevant data.
+
+    Example:
+    - `Get-Process | Select-Object -Property Name, CPU, Handles` selects only the Name, CPU, and Handles properties from the output of Get-Process.
+
+- Filtering objects:
+  - Where-Object cmdlet is used to filter objects based on specified criteria.
+  - It allows users to selectively process objects that meet specific conditions.
+
+    Example:
+    - `Get-Service | Where-Object { $_.Status -eq "Running" }` retrieves only running services.
+    - `Get-Process | Where-Object { $_.CPU -gt 50 }` retrieves processes with CPU usage greater than 50%.
+
+- Sorting objects:
+  - Sort-Object cmdlet is used to sort objects based on specified properties.
+  - It allows users to arrange objects in ascending or descending order.
+
+    Example:
+    - `Get-Process | Sort-Object -Property CPU -Descending` sorts processes based on CPU usage in descending order.
+    - `Get-Service | Sort-Object -Property DisplayName` sorts services alphabetically by display name.
+
+- Advanced object manipulation:
+  - PowerShell provides additional cmdlets and techniques for advanced object manipulation, such as grouping, formatting, and calculating properties.
+  - These techniques enable users to perform complex data operations efficiently.
+
+    Example:
+    - `Get-Process | Group-Object -Property Company` groups processes by their company names.
+    - `Get-Service | Format-Table -AutoSize` formats service information into a table with auto-sized columns.
