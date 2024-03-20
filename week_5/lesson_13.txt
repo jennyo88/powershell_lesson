@@ -1,0 +1,72 @@
+Most comm
+
+Week 1: Introduction to PowerShell Basics
+-----------------------------------------
+Lesson 1: Getting Started with PowerShell
+- Get-Help
+- Get-Command
+- Get-Service
+
+Lesson 2: Working with Objects in PowerShell
+- Get-Process
+- Get-ChildItem
+- Select-Object
+
+Lesson 3: PowerShell Pipeline
+- Where-Object
+- ForEach-Object
+- Sort-Object
+
+-----------------------------------------
+Week 2: Scripting Fundamentals
+-----------------------------------------
+Lesson 4: Variables and Data Types
+- Set-Variable
+- $variable assignment
+- Get-Variable
+
+Lesson 5: Conditional Statements and Looping
+- If
+- ForEach
+- While
+
+Lesson 6: Functions and Modules
+- Function
+- New-Module
+- Import-Module
+
+-----------------------------------------
+Week 3: Advanced PowerShell Concepts
+-----------------------------------------
+Lesson 7: Error Handling
+- Try
+- Catch
+- Finally
+
+Lesson 8: Working with Files and Folders
+- Get-Item
+- Copy-Item
+- Remove-Item
+
+Lesson 9: Remote Management with PowerShell
+- Enable-PSRemoting
+- Invoke-Command
+- Enter-PSSession
+
+-----------------------------------------
+Week 4: Putting It All Together
+-----------------------------------------
+Lesson 10: Scripting Best Practices
+- Write-Verbose
+- Write-Output
+- Write-Error
+
+Lesson 11: Real-world Automation Scenarios
+- Add-Content
+- Get-WmiObject
+- Test-Path
+
+Lesson 12: Final Project
+- Measure-Command
+- Start-Transcript
+- Export-Csv
