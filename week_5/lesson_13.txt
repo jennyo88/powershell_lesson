@@ -1,4 +1,5 @@
-Most comm
+Commands Used Based on Lesson
+=================================================================================
 
 Week 1: Introduction to PowerShell Basics
 -----------------------------------------
