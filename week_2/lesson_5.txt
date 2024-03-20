@@ -1,58 +1,55 @@
-Error Handling and Debugging
+PowerShell Lesson 5: Working with Files and Folders
 =================================================================================
 
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-Error handling and debugging are essential skills for PowerShell scripters. Understanding how to manage errors and troubleshoot scripts effectively can help identify and resolve issues quickly. This lesson will cover techniques for error handling, debugging tools, and best practices for troubleshooting PowerShell scripts.
+PowerShell provides powerful cmdlets for working with files and folders, allowing you to automate common file system tasks.
+This lesson will cover basic file and folder manipulation, including creating, copying, moving, renaming, and deleting files and folders.
 
 ---------------------------------------------------------------------------------
-Topics Covered:
+Commands Covered:
 ---------------------------------------------------------------------------------
-1. Error Handling:
-   - Types of errors in PowerShell.
-   - Try/Catch/Finally blocks for error handling.
-   - Common error handling patterns and best practices.
+1. New-Item:
+   - Description: Creates a new item (file or folder) at the specified location.
+   - Syntax: New-Item [-Path] <String> [-ItemType <String>] [-Name <String>] [-Value <Object>] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+   - Example: New-Item -Path "C:\NewFolder" -ItemType Directory
 
-2. Debugging Tools:
-   - Debugging with Write-Debug, Write-Verbose, and Write-Error cmdlets.
-   - Using breakpoints in scripts.
-   - Debugging with PowerShell Integrated Scripting Environment (ISE).
+2. Copy-Item:
+   - Description: Copies an item from one location to another.
+   - Syntax: Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Force] [-Recurse] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+   - Example: Copy-Item -Path "C:\Source\File.txt" -Destination "D:\Destination\" -Force
 
-3. Logging and Reporting:
-   - Writing custom logs with Write-Output and Add-Content.
-   - Generating reports with Export-Csv and ConvertTo-Html.
-   - Sending email notifications for script results.
+3. Move-Item:
+   - Description: Moves an item from one location to another.
+   - Syntax: Move-Item [-Path] <String[]> [-Destination] <String> [-Credential <PSCredential>] [-Force] [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
+   - Example: Move-Item -Path "C:\Source\File.txt" -Destination "C:\Destination\" -Force
 
-4. Best Practices:
-   - Structuring scripts for readability and maintainability.
-   - Implementing logging and error handling consistently.
-   - Documenting scripts with comments and help information.
+4. Rename-Item:
+   - Description: Renames an item.
+   - Syntax: Rename-Item [-Path] <String> [-NewName] <String> [-Force] [-PassThru] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+   - Example: Rename-Item -Path "C:\OldName.txt" -NewName "NewName.txt"
+
+5. Remove-Item:
+   - Description: Deletes an item.
+   - Syntax: Remove-Item [-Path] <String[]> [-Recurse] [-Force] [-Credential <PSCredential>] [-WhatIf] [-Confirm] [<CommonParameters>]
+   - Example: Remove-Item -Path "C:\ToDelete" -Recurse -Force
 
 ---------------------------------------------------------------------------------
 Practice:
 ---------------------------------------------------------------------------------
-To enhance your error handling and debugging skills in PowerShell, practice the following tasks:
+To gain proficiency in working with files and folders in PowerShell, practice the following tasks:
 
-1. Implement error handling in a script:
-   - Write a script that attempts to perform a file operation (e.g., copying a file).
-   - Use Try/Catch blocks to handle potential errors gracefully.
-   - Include error messages and logging to track script execution.
+1. Create a new folder named "Scripts" in the C:\ directory.
 
-2. Debug a script using Write-Debug:
-   - Add Write-Debug statements to a script to output debug information.
-   - Run the script with debugging enabled to observe debug messages.
+2. Copy a file named "Document.docx" from the C:\Temp\ directory to the D:\Backups\ directory.
 
-3. Generate a report from script output:
-   - Modify an existing script to generate a report in CSV or HTML format.
-   - Use Export-Csv or ConvertTo-Html cmdlets to convert script output into a report format.
+3. Move a file named "Data.csv" from the D:\Temp\ directory to the D:\Archive\ directory.
 
-4. Implement logging in a script:
-   - Enhance an existing script with logging functionality.
-   - Write script output, errors, and debug information to a log file for analysis.
+4. Rename a file named "Report.txt" to "MonthlyReport.txt" in the C:\Reports\ directory.
 
-5. Document a script with comments and help information:
-   - Add comments to a script to explain its purpose, logic, and usage.
-   - Include help information using comment-based help to provide documentation for users.
+5. Remove a folder named "OldFiles" along with all its contents from the D:\ directory.
 
-By practicing these tasks, you will improve your error handling and debugging skills, making your PowerShell scripts more robust, reliable, and maintainable.
+6. Create a new text file named "Log.txt" in the C:\Logs\ directory.
+
+By completing these tasks, you will gain practical experience in performing file and folder manipulation tasks using PowerShell, enabling you to automate file system operations effectively.
