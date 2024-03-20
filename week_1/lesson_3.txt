@@ -1,37 +1,33 @@
-PowerShell Pipeline
+Mastering the PowerShell Pipeline
 =================================================================================
 
----------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-The PowerShell pipeline is a powerful feature that allows you to chain together commands, passing the output of one command as input to another.
-Understanding how to effectively use the pipeline can greatly simplify and streamline your PowerShell scripts.
+Understanding and effectively utilizing the PowerShell pipeline is essential for writing efficient and concise scripts.
+The pipeline allows you to chain commands together, passing the output of one command as the input to another.
+This lesson will cover the basics of working with the PowerShell pipeline, including filtering, sorting, and formatting data.
 
+Topics Covered:
 ---------------------------------------------------------------------------------
-Commands Covered:
----------------------------------------------------------------------------------
-1. Select-Object:
-   - Description: Selects specified properties of objects.
-   - Syntax: Select-Object [-Property] <String[]> [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-First <Int32>] [-Skip <Int32>] [<CommonParameters>]
-   - Example: Get-Process | Select-Object Name, Id
-   - This command allows you to choose specific properties of objects to display. For instance, running `Get-Process | Select-Object Name, Id` will only display the Name and Id properties of process objects.
+1. Introduction to the PowerShell Pipeline:
+   - Explanation of what the PowerShell pipeline is and its significance.
+   - Understanding how the pipeline enables seamless data flow between cmdlets.
 
-2. Where-Object:
-   - Description: Filters objects based on specified criteria.
-   - Syntax: Where-Object [-FilterScript] <ScriptBlock> [<CommonParameters>]
-   - Example: Get-Process | Where-Object { $_.WorkingSet -gt 100MB }
-   - This command filters objects based on a specified condition. For example, running `Get-Process | Where-Object { $_.WorkingSet -gt 100MB }` will only display processes with a working set greater than 100 megabytes.
+2. Filtering Data in the Pipeline:
+   - Using the Where-Object cmdlet to filter data based on specific conditions.
+   - Applying filtering criteria to refine the output of commands in the pipeline.
 
-3. ForEach-Object:
-   - Description: Performs an operation on each item in a collection of objects.
-   - Syntax: ForEach-Object [-Process] <ScriptBlock> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [-InputObject <PSObject>] [<CommonParameters>]
-   - Example: Get-Service | ForEach-Object { Restart-Service $_.Name }
-   - This command is used to execute a script block for each object in a collection. For example, running `Get-Service | ForEach-Object { Restart-Service $_.Name }` will restart each service.
+3. Sorting Data in the Pipeline:
+   - Utilizing the Sort-Object cmdlet to sort data in ascending or descending order.
+   - Sorting data based on one or more properties.
 
----------------------------------------------------------------------------------
+4. Formatting Output in the Pipeline:
+   - Formatting the output of commands using the Format-Table, Format-List, and Format-Wide cmdlets.
+   - Customizing the appearance and layout of output data.
+
 Practice:
 ---------------------------------------------------------------------------------
-To gain proficiency in using the PowerShell pipeline, it's essential to practice combining commands and leveraging the pipeline effectively. Here are some practice tasks for Lesson 3:
+To gain proficiency in using the PowerShell pipeline, practice the following tasks:
 
 1. Filter and customize process information:
    - Use the Get-Process cmdlet to retrieve a list of processes running on your system.
