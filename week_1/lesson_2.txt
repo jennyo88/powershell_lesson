@@ -1,38 +1,29 @@
-|   PowerShell Basics   |
-=========================
-- Cmdlets:
-  - Cmdlets (pronounced "command-lets") are lightweight commands used in PowerShell.
-  - They follow a Verb-Noun naming convention and perform specific tasks.
-  - Cmdlets are the building blocks of PowerShell scripts and commands.
+Working with Objects in PowerShell
+=================================================================================
 
-    Example:
-    - `Get-Process` retrieves information about running processes on the system.
-    - `Get-Service` retrieves information about installed services on the system.
+---------------------------------------------------------------------------------
+Overview:
+---------------------------------------------------------------------------------
+- In PowerShell, everything is represented as an object, including files, processes, registry keys, etc.
+- Understanding how to work with objects is crucial for effective PowerShell scripting.
+- The Get-Member cmdlet is used to explore the properties and methods of objects.
 
-- Basic syntax:
-  - PowerShell cmdlets follow a consistent syntax: `Verb-Noun`.
-  - Parameters are used to modify cmdlet behavior and are preceded by a hyphen.
-  - Arguments provide input to cmdlets and parameters.
+---------------------------------------------------------------------------------
+Topics Covered:
+---------------------------------------------------------------------------------
+1. Get-Member:
+   - Description: Retrieves the properties and methods of objects.
+   - Syntax: Get-Member [-InputObject <PSObject>] [-Name <String>] [-Type <String>] [-MemberType <MemberTypes>] [-Static] [-Force] [-View <String>] [<CommonParameters>]
+   - Example: Get-Process | Get-Member
 
-    Example:
-    - `Get-Process -Name "chrome"` retrieves information about the Chrome process.
-    - `Get-Service -DisplayName "Print Spooler"` retrieves information about the Print Spooler service.
+2. Properties and Methods:
+   - Objects in PowerShell have properties (attributes) and methods (actions).
+   - Properties contain data about the object, such as name, size, etc.
+   - Methods are actions that can be performed on the object, such as starting or stopping a service.
 
-- Common cmdlets:
-  - Get-Help: Retrieves help information about PowerShell cmdlets and concepts.
-  - Get-Command: Lists all available cmdlets on the system.
-  - Get-Process: Retrieves information about running processes.
-  - Get-Service: Retrieves information about installed services.
-
-    Example:
-    - `Get-Help Get-Process` retrieves help information about the Get-Process cmdlet.
-    - `Get-Command` lists all available cmdlets on the system.
-  
-- Using the pipeline:
-  - The pipeline (`|`) allows the output of one cmdlet to be passed as input to another cmdlet.
-  - It enables chaining multiple cmdlets together to perform complex tasks efficiently.
-
-    Example:
-    - `Get-Process | Where-Object { $_.CPU -gt 50 }` retrieves processes with CPU usage greater than 50%.
-
-These examples demonstrate the fundamental concepts of PowerShell, including cmdlets, basic syntax, common cmdlets, and the use of the pipeline. Understanding these basics is crucial for working effectively with PowerShell.
+---------------------------------------------------------------------------------
+Practice:
+---------------------------------------------------------------------------------
+- Retrieve information about a file using the Get-Item cmdlet and then explore its properties and methods using Get-Member.
+- List all processes running on the system using the Get-Process cmdlet and explore their properties and methods.
+- Get the process IDs and names of processes consuming the most memory using Get-Process, Sort-Object, and Select-Object cmdlets.
