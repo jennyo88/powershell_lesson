@@ -1,0 +1,72 @@
+|   Control Flow   |
+====================
+- Conditional statements:
+  - Conditional statements allow you to execute code based on specified conditions.
+  - PowerShell supports if, elseif, and else statements for conditional branching.
+  - Conditions are evaluated as true or false.
+
+    Example:
+    ```powershell
+    $age = 25
+    if ($age -ge 18) {
+        Write-Host "You are an adult."
+    } elseif ($age -ge 13) {
+        Write-Host "You are a teenager."
+    } else {
+        Write-Host "You are a child."
+    }
+    ```
+
+- Loops:
+  - Loops allow you to repeat code execution until a specified condition is met.
+  - PowerShell supports foreach and for loops for iterating over collections or executing code a specific number of times.
+
+    Example:
+    ```powershell
+    $numbers = 1..5
+    foreach ($num in $numbers) {
+        Write-Host "Number: $num"
+    }
+
+    for ($i = 1; $i -le 5; $i++) {
+        Write-Host "Count: $i"
+    }
+    ```
+
+- Break and continue:
+  - Break statement is used to exit a loop prematurely.
+  - Continue statement is used to skip the remaining code in a loop iteration and move to the next iteration.
+
+    Example:
+    ```powershell
+    foreach ($num in 1..10) {
+        if ($num -eq 5) {
+            Write-Host "Exiting loop"
+            break
+        }
+        Write-Host "Number: $num"
+    }
+
+    foreach ($num in 1..5) {
+        if ($num -eq 3) {
+            Write-Host "Skipping number 3"
+            continue
+        }
+        Write-Host "Number: $num"
+    }
+    ```
+
+- Error handling:
+  - Error handling allows you to gracefully manage errors and exceptions in your scripts.
+  - PowerShell supports try-catch-finally blocks for handling errors.
+
+    Example:
+    ```powershell
+    try {
+        Get-ItemNotExist
+    } catch {
+        Write-Host "An error occurred: $_"
+    } finally {
+        Write-Host "Script execution completed."
+    }
+    ```
