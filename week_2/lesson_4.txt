@@ -93,10 +93,15 @@ Practice:
 To solidify your understanding of PowerShell scripting basics, practice the following tasks:
 
 1. Write a PowerShell script that prompts the user to enter their name, then displays a personalized greeting message.
+
 2. Create a script that takes two numbers as input from the user and calculates their sum, difference, product, and quotient. Display the results.
+
 3. Write a script that iterates through a list of numbers (e.g., 1 to 10) and prints whether each number is even or odd.
+
 4. Develop a script that checks if a given directory exists. If it does, display a message indicating its existence; otherwise, create the directory and inform the user.
+
 5. Define a function in a script that takes two parameters (e.g., $num1 and $num2) and returns the larger of the two numbers.
+
 6. Create a script that reads a text file and counts the number of lines it contains. Display the total line count.
 
 By completing these tasks, you will gain practical experience in PowerShell scripting fundamentals, preparing you to tackle more complex automation tasks in your IT environment.
