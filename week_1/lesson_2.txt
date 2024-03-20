@@ -4,26 +4,35 @@ Working with Objects in PowerShell
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-- In PowerShell, everything is represented as an object, including files, processes, registry keys, etc.
-- Understanding how to work with objects is crucial for effective PowerShell scripting.
-- The Get-Member cmdlet is used to explore the properties and methods of objects.
+In PowerShell, data is represented as objects rather than plain text, which allows for more versatile and powerful scripting capabilities. Objects encapsulate both data (properties) and actions (methods), enabling users to interact with them in a structured and meaningful way. Understanding how to work with objects is essential for effective PowerShell scripting and automation.
 
 ---------------------------------------------------------------------------------
-Topics Covered:
+Commands Covered:
 ---------------------------------------------------------------------------------
 1. Get-Member:
-   - Description: Retrieves the properties and methods of objects.
-   - Syntax: Get-Member [-InputObject <PSObject>] [-Name <String>] [-Type <String>] [-MemberType <MemberTypes>] [-Static] [-Force] [-View <String>] [<CommonParameters>]
+   - Description: The Get-Member cmdlet is used to retrieve the members (properties and methods) of an object. It allows users to explore the structure and capabilities of different types of objects.
+   - Syntax: Get-Member [-InputObject <PSObject>] [-MemberType <MemberTypes[]>] [-Static] [<CommonParameters>]
    - Example: Get-Process | Get-Member
-
-2. Properties and Methods:
-   - Objects in PowerShell have properties (attributes) and methods (actions).
-   - Properties contain data about the object, such as name, size, etc.
-   - Methods are actions that can be performed on the object, such as starting or stopping a service.
+   - Usage: By piping the output of a cmdlet or expression to Get-Member, users can examine the properties and methods available for the resulting objects. This helps in understanding the data returned by cmdlets and how to manipulate it effectively.
 
 ---------------------------------------------------------------------------------
 Practice:
 ---------------------------------------------------------------------------------
-- Retrieve information about a file using the Get-Item cmdlet and then explore its properties and methods using Get-Member.
-- List all processes running on the system using the Get-Process cmdlet and explore their properties and methods.
-- Get the process IDs and names of processes consuming the most memory using Get-Process, Sort-Object, and Select-Object cmdlets.
+To reinforce understanding and gain practical experience with working with objects in PowerShell, here are some practice tasks for Lesson 2:
+
+1. Retrieve information about a file:
+   - Use the Get-Item cmdlet to retrieve information about a specific file on your system.
+   - Pipe the output of Get-Item to Get-Member to explore the properties and methods available for file objects.
+   - Examine properties such as Name, Length, CreationTime, and LastWriteTime to understand how PowerShell represents file metadata.
+
+2. List all processes running on your system:
+   - Use the Get-Process cmdlet to retrieve a list of all processes currently running on your system.
+   - Pipe the output of Get-Process to Get-Member to explore the properties and methods available for process objects.
+   - Examine properties such as ID, Name, CPU, and Memory to gain insights into process-related information.
+
+3. Retrieve information about services:
+   - Use the Get-Service cmdlet to retrieve a list of all services installed on your system.
+   - Pipe the output of Get-Service to Get-Member to explore the properties and methods available for service objects.
+   - Examine properties such as DisplayName, Status, StartType, and CanPauseAndContinue to understand service-related information.
+
+By practicing these tasks, you will become more familiar with working with objects in PowerShell and develop the skills necessary to manipulate and manage data effectively in your scripts and automation tasks.
