@@ -1,0 +1,87 @@
+|   Scripting in PowerShell   |
+===============================
+- Writing scripts:
+  - PowerShell scripts are text files containing a series of PowerShell commands and statements.
+  - Scripts have a .ps1 file extension and can be executed from the command line or within the PowerShell environment.
+  - Scripts allow for automation of repetitive tasks and complex workflows.
+
+    Example:
+    - Create a script file named `MyScript.ps1` with the following content:
+      ```powershell
+      Write-Host "Hello, World!"
+      ```
+
+- Script parameters:
+  - Script parameters allow you to pass input values to scripts at runtime.
+  - Parameters are declared in the script header using the Param keyword.
+  - Parameters can have default values and support data validation.
+
+    Example:
+    - Create a script file named `GreetUser.ps1` with the following content:
+      ```powershell
+      Param(
+          [Parameter(Mandatory=$true)]
+          [string]$Name
+      )
+
+      Write-Host "Hello, $Name!"
+      ```
+    - Execute the script with a parameter: `.\GreetUser.ps1 -Name "John"`
+
+- Functions:
+  - Functions in PowerShell allow you to encapsulate reusable code blocks.
+  - Functions can accept parameters and return values.
+  - They enhance code readability, maintainability, and reusability.
+
+    Example:
+    - Define a function named `Get-Square` in a script file:
+      ```powershell
+      function Get-Square {
+          Param(
+              [int]$Number
+          )
+          return $Number * $Number
+      }
+
+      $result = Get-Square -Number 5
+      Write-Host "Square of 5 is $result"
+      ```
+
+- Best practices:
+  - Use meaningful variable and function names to improve code readability.
+  - Comment your code to explain its purpose and functionality.
+  - Modularize your scripts by breaking them into smaller functions.
+  - Test your scripts thoroughly before deploying them to production environments.
+  - Follow coding standards and conventions for consistency.
+
+    Example:
+    - Comment your script to explain its purpose and usage:
+      ```powershell
+      <#
+      .SYNOPSIS
+      This script greets the user with a customizable message.
+
+      .DESCRIPTION
+      This script accepts a name as input and greets the user with a personalized message.
+
+      .PARAMETER Name
+      Specifies the name of the user to greet.
+
+      .EXAMPLE
+      .\GreetUser.ps1 -Name "John"
+      Greets the user with the name "John".
+
+      .NOTES
+      Author: Your Name
+      Date: YYYY-MM-DD
+      Version: 1.0
+      #>
+
+      Param(
+          [Parameter(Mandatory=$true)]
+          [string]$Name
+      )
+
+      Write-Host "Hello, $Name!"
+      ```
+
