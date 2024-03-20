@@ -1,44 +1,28 @@
-|   Introduction to PowerShell   |
-==================================
-- Overview of PowerShell:
-  - PowerShell is a powerful command-line shell and scripting language developed by Microsoft.
-  - It provides a command-line interface (CLI) for administrators to automate tasks and manage systems more efficiently.
-  - PowerShell is built on the .NET Framework and designed to be object-oriented, allowing users to manipulate objects directly.
+Week 1: Introduction to PowerShell Basics
 
-    Example:
-    - Running `Get-Process` in PowerShell retrieves a list of running processes on the system.
+Lesson 1: Getting Started with PowerShell
 
-- Purpose and Advantages:
-  - PowerShell is designed to automate repetitive tasks and simplify system administration.
-  - It allows administrators to manage both local and remote systems from a single interface.
-  - PowerShell integrates with other Microsoft products and services, such as Active Directory, Exchange Server, and Azure.
-  - Its scripting capabilities enable the creation of complex automation workflows and solutions.
+Overview:
+- Introduction to PowerShell, a powerful scripting language and automation framework primarily designed for system administration tasks.
+- Importance of PowerShell in modern IT environments for automating repetitive tasks, managing systems, and streamlining workflows.
 
-    Example:
-    - Running `Restart-Service -Name "wuauserv"` restarts the Windows Update service, automating the process of service management.
+Commands Covered:
+1. Get-Command:
+   - Description: Retrieves all available commands in PowerShell.
+   - Syntax: Get-Command [-Name <String[]>] [-Module <String[]>] [-CommandType <CommandTypes>] [-TotalCount <Int32>] [-Syntax] [-ParameterName <String[]>] [-ParameterType <PSTypeName[]>] [-ShowCommandInfo] [-FullyQualifiedModule <ModuleSpecification[]>] [-ListImported] [<CommonParameters>]
+   - Example: Get-Command
 
-- Installation:
-  - PowerShell comes pre-installed on Windows operating systems starting from Windows 7 and Windows Server 2008 R2.
-  - For macOS and Linux, PowerShell Core (cross-platform version) can be installed from the official GitHub repository or package managers like Homebrew or apt.
+2. Get-Help:
+   - Description: Retrieves help information about PowerShell commands and concepts.
+   - Syntax: Get-Help [-Name] <String[]> [-Parameter <String>] [-Component <String[]>] [-Functionality <String[]>] [-Role <String>] [-Category <String[]>] [-Full] [-Online] [<CommonParameters>]
+   - Example: Get-Help Get-Service
 
-    Example:
-    - Installing PowerShell Core on Ubuntu Linux using the following commands:
-      ```
-      sudo apt-get update
-      sudo apt-get install -y powershell
-      ```
+3. Get-Service:
+   - Description: Retrieves the status of services on a computer.
+   - Syntax: Get-Service [[-Name] <String[]>] [-ComputerName <String[]>] [-DependentServices] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-RequiredServices] [-Exclude <String[]>] [-Include <String[]>] [-DisplayName <String[]>] [-InputObject <ServiceController[]>] [-StartupType <String[]>] [<CommonParameters>]
+   - Example: Get-Service
 
-- Launching PowerShell:
-  - Command-line interface (CLI): PowerShell can be launched by typing "powershell" in the command prompt on Windows or "pwsh" on macOS/Linux.
-  - Integrated Scripting Environment (ISE): PowerShell ISE provides a graphical interface with features like code editing, debugging, and script execution.
-
-    Example:
-    - Launching PowerShell ISE from the Start menu on Windows and using its integrated scripting environment to write and execute scripts.
-
-- Getting Help:
-  - PowerShell provides extensive documentation and help resources accessible via the Get-Help cmdlet.
-  - Users can type "Get-Help" followed by a cmdlet name to retrieve information about its usage, syntax, and examples.
-  - Online resources such as Microsoft Docs and community forums are also valuable sources of information and support for learning PowerShell.
-
-    Example:
-    - Using `Get-Help Get-Service` retrieves information about the Get-Service cmdlet, including its syntax, parameters, and examples.
+Practice:
+- List all available commands in PowerShell using the Get-Command cmdlet.
+- Retrieve help information for the Get-Service cmdlet using the Get-Help cmdlet.
+- List all running services on your system using the Get-Service cmdlet.
