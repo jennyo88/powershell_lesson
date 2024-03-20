@@ -4,13 +4,13 @@ Scripting Basics
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-Scripting in PowerShell involves creating reusable scripts to automate tasks, perform complex operations, and interact with various system components. This lesson will cover the basics of PowerShell scripting, including script structure, variables, flow control, and functions.
+Scripting in PowerShell involves creating reusable scripts to automate tasks, perform complex operations, and interact with various system components.
+This lesson will cover the basics of PowerShell scripting, including script structure, variables, flow control, and functions.
 
 ---------------------------------------------------------------------------------
 Script Structure:
 ---------------------------------------------------------------------------------
 A PowerShell script typically consists of a series of commands and statements that are executed sequentially. Here's an example of a basic PowerShell script:
-
 Example:
    ```powershell
       
@@ -20,19 +20,15 @@ Example:
    ```
 
 You can save this script in a .ps1 file (e.g., HelloWorld.ps1) and run it from the command line using the PowerShell interpreter:
-
    ```powershell
       
       PS C:\Scripts> .\HelloWorld.ps1
       Hello, world!
 
    ```
-
-Variables:
+- Variables:
 Variables in PowerShell are used to store data that can be referenced and manipulated throughout a script. Here's how you can declare and use variables:
-
 Example:
-
    ```powershell
       
       $name = "John"
@@ -46,12 +42,9 @@ Example:
       Write-Host "Is working: $isWorking"
 
    ```
-
-Flow Control:
+- Flow Control:
 PowerShell provides various constructs for controlling the flow of execution in a script, such as conditional statements and looping structures.
-
 Example (Conditional Statement - If/Else):
-
    ```powershell
 
       $number = 10
@@ -65,8 +58,7 @@ Example (Conditional Statement - If/Else):
       }
 
    ```
-Example (Looping Structure - ForEach):
-      
+Example (Looping Structure - ForEach): 
    ```powershell
 
       $numbers = 1..5
@@ -76,12 +68,9 @@ Example (Looping Structure - ForEach):
       }
 
    ```
-
-Functions:
+- Functions:
 Functions in PowerShell allow you to encapsulate a block of code that can be reused multiple times within a script. Here's how you can define and use a function:
-
 Example:
-
    ```powershell
 
       function Get-Sum {
@@ -104,15 +93,10 @@ Practice:
 To solidify your understanding of PowerShell scripting basics, practice the following tasks:
 
 1. Write a PowerShell script that prompts the user to enter their name, then displays a personalized greeting message.
-
 2. Create a script that takes two numbers as input from the user and calculates their sum, difference, product, and quotient. Display the results.
-
 3. Write a script that iterates through a list of numbers (e.g., 1 to 10) and prints whether each number is even or odd.
-
 4. Develop a script that checks if a given directory exists. If it does, display a message indicating its existence; otherwise, create the directory and inform the user.
-
 5. Define a function in a script that takes two parameters (e.g., $num1 and $num2) and returns the larger of the two numbers.
-
 6. Create a script that reads a text file and counts the number of lines it contains. Display the total line count.
 
 By completing these tasks, you will gain practical experience in PowerShell scripting fundamentals, preparing you to tackle more complex automation tasks in your IT environment.
