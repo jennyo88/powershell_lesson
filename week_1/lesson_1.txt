@@ -4,7 +4,9 @@ Getting Started with PowerShell
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-PowerShell is a versatile and powerful scripting language and automation framework primarily designed for system administration tasks. It provides a command-line shell and scripting language built on the .NET Framework, offering administrators a robust toolset for managing Windows environments efficiently. In modern IT environments, PowerShell plays a crucial role in automating repetitive tasks, managing systems, and streamlining workflows, making it an essential skill for IT professionals.
+PowerShell is a versatile and powerful scripting language and automation framework primarily designed for system administration tasks.
+It provides a command-line shell and scripting language built on the .NET Framework, offering administrators a robust toolset for managing Windows environments efficiently.
+In modern IT environments, PowerShell plays a crucial role in automating repetitive tasks, managing systems, and streamlining workflows, making it an essential skill for IT professionals.
 
 ---------------------------------------------------------------------------------
 Commands Covered:
