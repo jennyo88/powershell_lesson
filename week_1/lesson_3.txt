@@ -4,7 +4,8 @@ PowerShell Pipeline
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-The PowerShell pipeline is a powerful feature that allows you to chain together commands, passing the output of one command as input to another. Understanding how to effectively use the pipeline can greatly simplify and streamline your PowerShell scripts.
+The PowerShell pipeline is a powerful feature that allows you to chain together commands, passing the output of one command as input to another.
+Understanding how to effectively use the pipeline can greatly simplify and streamline your PowerShell scripts.
 
 ---------------------------------------------------------------------------------
 Commands Covered:
