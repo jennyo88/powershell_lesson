@@ -18,6 +18,9 @@ Copy-Item:
 - Syntax: Copy-Item [-Path] <String[]> [[-Destination] <String>] [-Container] [-Credential <PSCredential>] [-Force] [-Include <String[]>] [-Exclude <String[]>] [-Filter <String>] [-Recurse] [-PassThru] [-UseTransaction] [-ToSession <PSSession>] [<CommonParameters>]
 - Example: Copy-Item -Path "C:\file.txt" -Destination "D:\backup"
 
+D
+---------------------------------------------------------------------------------
+
 E
 ---------------------------------------------------------------------------------
 Enable-PSRemoting:
@@ -83,6 +86,9 @@ Get-WmiObject:
 - Description: Retrieves instances of Windows Management Instrumentation (WMI) classes or information about the available classes.
 - Syntax: Get-WmiObject [[-Class] <String>] [-Namespace <String>] [-List] [-Query <String>] [-Authentication <AuthenticationLevel>] [-Impersonation <ImpersonationLevel>] [-ComputerName <String[]>] [-Credential <PSCredential>] [-Filter <String>] [-Locale <String>] [-Property <String[]>] [-Authority <String>] [-EnableAllPrivileges] [<CommonParameters>]
 - Example: Get-WmiObject -Class Win32_OperatingSystem
+
+H
+---------------------------------------------------------------------------------
 
 I
 ---------------------------------------------------------------------------------
