@@ -1,0 +1,42 @@
+|   Working with Services   |
+=============================
+- Managing services:
+  - Services are background processes that run continuously on a computer.
+  - PowerShell provides cmdlets like Get-Service, Start-Service, Stop-Service, and Restart-Service for managing services.
+
+    Example:
+    - Get a list of all services on the local computer:
+      ```powershell
+      Get-Service
+      ```
+
+- Filtering and sorting services:
+  - PowerShell allows you to filter and sort services based on specific criteria using Where-Object and Sort-Object cmdlets.
+
+    Example:
+    - Get a list of running services sorted by display name:
+      ```powershell
+      Get-Service | Where-Object { $_.Status -eq "Running" } | Sort-Object -Property DisplayName
+      ```
+
+- Monitoring services:
+  - PowerShell enables you to monitor service status and performance, allowing you to take proactive actions as needed.
+
+    Example:
+    - Monitor a specific service and restart it if it stops:
+      ```powershell
+      $service = Get-Service -Name "service_name"
+      if ($service.Status -ne "Running") {
+          Restart-Service -Name "service_name"
+      }
+      ```
+
+- Advanced service management:
+  - PowerShell provides additional cmdlets and techniques for advanced service management, such as setting service startup type and dependencies.
+
+    Example:
+    - Set the startup type of a service to Automatic:
+      ```powershell
+      Set-Service -Name "service_name" -StartupType Automatic
+      ```
+
