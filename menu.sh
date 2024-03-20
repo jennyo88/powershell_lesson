@@ -5,7 +5,7 @@ display_lesson_plan_summary() {
     if [ -f "lesson_plan.txt" ]; then
         clear
         echo "Lesson Plan Summary:"
-        cat "lesson_plan.txt"
+        less "lesson_plan.txt"
         echo
     else
         echo "Lesson plan not found."
@@ -17,7 +17,7 @@ display_powershell_index() {
     if [ -f "powershell_index.txt" ]; then
         clear
         echo "PowerShell Commands Index:"
-        cat "powershell_index.txt"
+        less "powershell_index.txt"
         echo
     else
         echo "PowerShell index not found."
