@@ -4,28 +4,28 @@ PowerShell Pipeline
 ---------------------------------------------------------------------------------
 Overview:
 ---------------------------------------------------------------------------------
-The PowerShell pipeline is a powerful feature that allows the output of one cmdlet to be passed as input to another cmdlet, enabling efficient and concise command chaining. By using the pipeline, users can combine multiple commands to perform complex operations in a single line, streamlining their workflow and enhancing productivity.
+The PowerShell pipeline is a powerful feature that allows you to chain together commands, passing the output of one command as input to another. Understanding how to effectively use the pipeline can greatly simplify and streamline your PowerShell scripts.
 
 ---------------------------------------------------------------------------------
 Commands Covered:
 ---------------------------------------------------------------------------------
 1. Select-Object:
-   - Description: The Select-Object cmdlet is used to select and manipulate specific properties of objects.
-   - Syntax: Select-Object [-Property <Object[]>] [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-First <Int32>] [-Last <Int32>] [-Skip <Int32>] [-Unique] [<CommonParameters>]
-   - Example: Get-Process | Select-Object Name, CPU
-   - Usage: Select-Object allows users to filter and customize the properties displayed for each object in the pipeline output. This is useful for focusing on relevant information and reducing clutter in the output.
+   - Description: Selects specified properties of objects.
+   - Syntax: Select-Object [-Property] <String[]> [-ExcludeProperty <String[]>] [-ExpandProperty <String>] [-Unique] [-First <Int32>] [-Skip <Int32>] [<CommonParameters>]
+   - Example: Get-Process | Select-Object Name, Id
+   - This command allows you to choose specific properties of objects to display. For instance, running `Get-Process | Select-Object Name, Id` will only display the Name and Id properties of process objects.
 
 2. Where-Object:
-   - Description: The Where-Object cmdlet is used to filter objects based on specified criteria.
-   - Syntax: Where-Object [-FilterScript] <ScriptBlock> [-InputObject <PSObject>] [<CommonParameters>]
-   - Example: Get-Service | Where-Object { $_.Status -eq 'Running' }
-   - Usage: Where-Object enables users to selectively process objects in the pipeline based on conditions defined in a script block. This allows for dynamic filtering of data, facilitating more targeted and precise operations.
+   - Description: Filters objects based on specified criteria.
+   - Syntax: Where-Object [-FilterScript] <ScriptBlock> [<CommonParameters>]
+   - Example: Get-Process | Where-Object { $_.WorkingSet -gt 100MB }
+   - This command filters objects based on a specified condition. For example, running `Get-Process | Where-Object { $_.WorkingSet -gt 100MB }` will only display processes with a working set greater than 100 megabytes.
 
 3. ForEach-Object:
-   - Description: The ForEach-Object cmdlet is used to perform an operation on each object in the pipeline.
-   - Syntax: ForEach-Object [-Process] <ScriptBlock> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [<CommonParameters>]
-   - Example: Get-ChildItem | ForEach-Object { Write-Output "File: $($_.Name)" }
-   - Usage: ForEach-Object iterates through each object in the pipeline and executes the specified script block for each object. This allows for custom processing and manipulation of data on a per-object basis.
+   - Description: Performs an operation on each item in a collection of objects.
+   - Syntax: ForEach-Object [-Process] <ScriptBlock> [-Begin <ScriptBlock>] [-End <ScriptBlock>] [-InputObject <PSObject>] [<CommonParameters>]
+   - Example: Get-Service | ForEach-Object { Restart-Service $_.Name }
+   - This command is used to execute a script block for each object in a collection. For example, running `Get-Service | ForEach-Object { Restart-Service $_.Name }` will restart each service.
 
 ---------------------------------------------------------------------------------
 Practice:
