@@ -1,0 +1,25 @@
+|   PowerShell Basics   |
+=========================
+- Cmdlets: Understanding and using cmdlets.
+  - Cmdlets (pronounced "command-lets") are lightweight commands in PowerShell that perform specific tasks.
+  - Example: `Get-Process` retrieves a list of running processes on the system.
+  
+- Basic syntax: Verb-Noun structure, parameters, and arguments.
+  - PowerShell cmdlets follow a Verb-Noun naming convention.
+  - Parameters are used to modify cmdlet behavior, and arguments are values passed to parameters.
+  - Example: `Get-ChildItem -Path C:\Windows` lists files and directories in the specified path.
+
+- Common cmdlets: Get-Help, Get-Command, Get-Process, Get-Service.
+  - `Get-Help`: Retrieves help information about cmdlets, functions, and scripts.
+    Example: `Get-Help Get-Process`
+  - `Get-Command`: Lists all available cmdlets.
+    Example: `Get-Command -Module ActiveDirectory`
+  - `Get-Process`: Retrieves information about running processes.
+    Example: `Get-Process -Name chrome`
+  - `Get-Service`: Retrieves information about installed services.
+    Example: `Get-Service -Name Spooler`
+  
+- Using the pipeline: Piping output from one cmdlet to another.
+  - The pipeline (`|`) allows the output of one cmdlet to be passed as input to another.
+  - Example: `Get-Process | Where-Object {$_.Handles -gt 1000}` filters processes with more than 1000 handles.
+
